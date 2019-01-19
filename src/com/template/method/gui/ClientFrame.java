@@ -2,6 +2,7 @@ package com.template.method.gui;
 
 import com.template.method.client.ThreadTetrisClient;
 import com.template.method.gui.figure.Figure;
+import com.template.method.server.XMLParser;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -196,8 +197,8 @@ public class ClientFrame extends JFrame {
 
 
         // initialization of server with from xml
-        JButton bStartServerXML = new JButton("Uruchom server z domyslnymi opcjami");
-////        bStartServer.add(new StartServerAction());
+        JButton bStartServerXML = new JButton("Uruchom server z domyślnymi opcjami");
+        bStartServerXML.addActionListener(new StartServerAction());
         pStartServerButton.add(bStartServerXML);
 
 
@@ -305,10 +306,20 @@ public class ClientFrame extends JFrame {
     class StartServerAction implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
+            Integer serverPort = null;
+            Integer players = null;
+            Integer playTime = null;
 
-            Integer serverPort = Integer.parseInt(ClientFrame.this.tfServerPort.getText());
-            Integer players = Integer.parseInt(tfAbsencePlayer.getText());
-            Integer playTime = Integer.parseInt(tfPlayTime.getText());
+            if(((JButton)e.getSource()).getText().equals("Uruchom server z domyślnymi opcjami")) {
+                XMLParser.Configuration configuration = XMLParser.parseConfiguration("./src/com/template/method/server/configuration.xml");
+                serverPort = configuration.getPort();
+                players = configuration.getPlayerCount();
+                playTime = configuration.getPlayTime();
+            } else {
+                serverPort = Integer.parseInt(ClientFrame.this.tfServerPort.getText());
+                players = Integer.parseInt(tfAbsencePlayer.getText());
+                playTime = Integer.parseInt(tfPlayTime.getText());
+            }
 
             new ServerFrame(serverPort, players, playTime, tetrisFrame);
         }

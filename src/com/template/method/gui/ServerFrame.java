@@ -95,7 +95,7 @@ public class ServerFrame extends JFrame implements Logable {
         JPanel pServerClientTraffic = new JPanel(new GridLayout(1, 1));
 
         //initialization of text area
-        viewLog = new JTextArea("Server gestartet!" + "\n", 30, 30);
+        viewLog = new JTextArea("Server started!" + "\n", 30, 30);
         viewLog.setEditable(false);
         //for server commands
         //viewLog.setEditable(true);

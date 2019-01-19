@@ -18,7 +18,9 @@ public class XMLParser {
     public static Configuration parseConfiguration(String fileName) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         String ip = "";
-        String port = "";
+        Integer port = 8181;
+        Integer playerCount = 2;
+        Integer playTime = 600000;
 
         try {
             File file = new File(fileName);
@@ -32,37 +34,62 @@ public class XMLParser {
 
             for(int i  = 0 ; i < nodes.getLength(); i++) {
                 Node node = nodes.item(i);
-                if(node.getNodeName().equals("ip")) {
-                    ip = node.getTextContent();
-                } else if(node.getNodeName().equals("port")) {
-                    port = node.getTextContent();
+
+                switch(node.getNodeName()) {
+                    case "ip":
+                        ip = node.getTextContent();
+                        break;
+                    case "port":
+                        port = Integer.parseInt(node.getTextContent());
+                        break;
+                    case "playerCount":
+                        playerCount = Integer.parseInt(node.getTextContent());
+                        break;
+                    case "playTime":
+                        playTime = Integer.parseInt(node.getTextContent());
+                        break;
                 }
             }
 
-            return new Configuration(ip, port);
 
         } catch(ParserConfigurationException | SAXException | IOException  e) {
             e.printStackTrace();
             System.exit(1);
         }
 
-        return new Configuration(ip, port);
+        return new Configuration(ip, port, playerCount, playTime);
     }
 
 
     public static class Configuration {
         String ipNumber;
-        String port;
+        Integer port;
+        Integer playerCount;
+        Integer playTime;
 
-        public Configuration(String ipNumber, String port) {
+        public Configuration(String ipNumber, Integer port, Integer playerCount, Integer playTime) {
             this.ipNumber = ipNumber;
             this.port = port;
+            this.playerCount = playerCount;
+            this.playTime = playTime;
         }
 
         @Override
         public String toString() {
             return ipNumber + "  " + port;
         }
+
+        public String getIpNumber() {
+            return ipNumber;
+        }
+
+        public Integer getPlayerCount() { return playerCount; }
+
+        public Integer getPort() {
+            return port;
+        }
+
+        public Integer getPlayTime() { return playTime; }
     }
 
 

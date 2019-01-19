@@ -3,4 +3,6 @@
     <!--This is my local ip -->
     <ip>192.168.1.21</ip>
     <port>8181</port>
+    <playerCount>2</playerCount>
+    <playTime>600000</playTime>
 </configuration>
