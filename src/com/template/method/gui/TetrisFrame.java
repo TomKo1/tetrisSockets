@@ -61,21 +61,11 @@ public class TetrisFrame extends JFrame {
         JMenuBar mBar = new JMenuBar();
 
         //mGame menu
-        JMenu mGame = new JMenu("Spiel");
-        mGameNew = new JMenuItem("Neues Spiel");
-        JMenuItem mGameExit = new JMenuItem("Beenden");
-        mGame.add(mGameNew);
+        JMenu mGame = new JMenu("Gra");
+        JMenuItem mGameExit = new JMenuItem("Zakończ");
         mGame.add(mGameExit);
         mBar.add(mGame);
 
-        //mHelp menu
-        JMenu mHelp = new JMenu("Hilfe");
-        JMenuItem mHelpAbout = new JMenuItem("�ber Tetris");
-        mHelp.add(mHelpAbout);
-        mBar.add(mHelp);
-
-        //add action listeners
-        mGameNew.addActionListener(new TetrisFrame_mGameNew_actionAdapter(this));
         mGameExit.addActionListener(new TetrisFrame_mGameExit_actionAdapter(this));
 
         return mBar;

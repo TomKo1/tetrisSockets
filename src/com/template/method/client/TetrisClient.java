@@ -1,10 +1,12 @@
 package com.template.method.client;
 
+import com.template.method.gui.ChatFrame;
 import com.template.method.gui.ClientFrame;
 import com.template.method.gui.battlefield.BattleField;
 import com.template.method.server.TetrisServer;
 import com.template.method.server.command.impl.StartGameRequest;
 
+import java.awt.*;
 import java.io.*;
 import java.net.*;
 import javax.swing.*;
@@ -144,6 +146,9 @@ public class TetrisClient implements Serializable {
         */
         battleField = new BattleField(this, clientFrame);
         clientFrame.getTetrisFrame().addInternalFrame(battleField);
+//        clientFrame.getTetrisFrame().add(new ChatFrame());
+
+        startChatFrame();
 
         input.start();
 
@@ -160,6 +165,13 @@ public class TetrisClient implements Serializable {
         catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Starts the Swing chat frame
+     */
+    private void startChatFrame() {
+        EventQueue.invokeLater(() -> new ChatFrame());
     }
 
     /**

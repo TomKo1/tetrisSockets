@@ -100,7 +100,7 @@ public class ClientFrame extends JFrame {
 
         figurePanel = new JPanel();
         figurePanel.setLayout(new GridLayout(2, 1));
-        JLabel figureLabel = new JLabel("N�chster Tetris Stein:");
+        JLabel figureLabel = new JLabel("Następny klocek:");
         figurePanel.add(figureLabel);
         figurePanel.setVisible(true);
 
@@ -122,40 +122,35 @@ public class ClientFrame extends JFrame {
         JPanel pMultiSingleButton = new JPanel(new GridLayout(1, 2));
 
         //initialization of name label and name text field panel
-        JLabel lClientName = new JLabel("Spielername:");
+        JLabel lClientName = new JLabel("Nazwa gracza:");
         clientName = new JTextField();
         clientName.addActionListener(new ClientNameAction());
         pName.add(lClientName);
         pName.add(clientName);
 
         //initialization of ip label and ip address panel
-        JLabel lIP = new JLabel("Server host:");
+        JLabel lIP = new JLabel("IP hosta:");
         host = new JTextField("localhost");
         host.addActionListener(new HostAction());
         pIP.add(lIP);
         pIP.add(host);
 
         //initialization of port label and ip address panel
-        JLabel lPort = new JLabel("Server Port:");
+        JLabel lPort = new JLabel("Port servera:");
         port = new JTextField("8181");
         port.addActionListener(new HostAction());
         pPort.add(lPort);
         pPort.add(port);
 
-        //initialization of single and multiplayer button panel
-        bSinglePlayer = new JButton("Einzelspieler");
-        bSinglePlayer.addActionListener(new SinglePlayerAction());
-        bSinglePlayer.setEnabled(true);
-        pMultiSingleButton.add(bSinglePlayer);
 
         //initialization of mutliplayer button
-        bMultiPlayer = new JButton("Multiplayer");
+        bMultiPlayer = new JButton("Dołącz do gry");
         bMultiPlayer.addActionListener(new MultiPlayerAction());
         bMultiPlayer.setEnabled(true);
         pMultiSingleButton.add(bMultiPlayer);
 
         //initialization of points panel
-        JLabel pointsLabel = new JLabel("Punkte: ");
+        JLabel pointsLabel = new JLabel("Punkty: ");
         pointsLabel.setVisible(true);
         lPoints = new JLabel("0");
         lPoints.setVisible(true);
@@ -163,7 +158,7 @@ public class ClientFrame extends JFrame {
         pointsPanel.add(lPoints);
 
         //set panels on client panel
-        clientPanel.add(new JLabel("Tetris Client"));
+        clientPanel.add(new JLabel("Dołącz do istniejącej gry"));
         clientPanel.add(pName);
         clientPanel.add(pIP);
         clientPanel.add(pPort);
@@ -183,24 +178,24 @@ public class ClientFrame extends JFrame {
         pServerPort.add(tfServerPort);
 
         //initialization of ip label and ip address panel
-        JLabel lAbsencePlayer = new JLabel("Anzahl Spieler:");
-        tfAbsencePlayer = new JTextField("1");
+        JLabel lAbsencePlayer = new JLabel("Liczba graczy:");
+        tfAbsencePlayer = new JTextField("2");
         pAbsencePlayer.add(lAbsencePlayer);
         pAbsencePlayer.add(tfAbsencePlayer);
 
         //initialization of port label and ip address panel
-        JLabel lPlayTime = new JLabel("Spielzeit:");
+        JLabel lPlayTime = new JLabel("Czas gry [sekundy]:");
         tfPlayTime = new JTextField("600000");
         pPlayTime.add(lPlayTime);
         pPlayTime.add(tfPlayTime);
 
         //initialization of server start button panel
-        JButton bStartServer = new JButton("Tetris Server starten");
+        JButton bStartServer = new JButton("Uruchom server");
         bStartServer.addActionListener(new StartServerAction());
         pStartServerButton.add(bStartServer);
 
         //set panels on server panel
-        serverPanel.add(new JLabel("Tetris Server"));
+        serverPanel.add(new JLabel("Hostuj grę"));
         serverPanel.add(pServerPort);
         serverPanel.add(pAbsencePlayer);
         serverPanel.add(pPlayTime);
@@ -264,15 +259,6 @@ public class ClientFrame extends JFrame {
         pointsPanel.validate();
     }
 
-    /**
-     * By press playerName text field bSinglePlayer and bMultiPlayer will enable
-     *
-     * @param e ActionEvent
-     */
-    void tfName_actionPerformed(ActionEvent e) {
-
-
-    }
 
     class ClientNameAction implements ActionListener {
 
@@ -320,12 +306,6 @@ public class ClientFrame extends JFrame {
         }
     }
 
-    class SinglePlayerAction implements ActionListener {
-
-        public void actionPerformed(ActionEvent e) {
-            throw new UnsupportedOperationException("The single player mode is unsupported at the time.");
-        }
-    }
 
     class MultiPlayerAction implements ActionListener {
 
