@@ -90,6 +90,7 @@ public class ServerOutput extends Thread {
                 Sendable sendable = sendables.remove(0);
                 try {
                     outputStream.writeObject(sendable);
+                    outputStream.flush();
                 }
                 catch (IOException ioe) {
                     System.out.println("write object bug");

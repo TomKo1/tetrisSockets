@@ -3,6 +3,7 @@ package com.template.method.client;
 
 import com.template.method.command.Sendable;
 import com.template.method.server.command.Serverable;
+import com.template.method.server.command.impl.BroadcastMessage;
 
 import java.io.*;
 import java.net.*;
@@ -104,7 +105,6 @@ public class ClientOutput extends Thread {
 
         //noinspection InfiniteLoopStatement
         while (true) {
-
             try {
                 synchronized (clientDummy) {
                     clientDummy.wait();
@@ -113,13 +113,14 @@ public class ClientOutput extends Thread {
             catch (InterruptedException ie) {
                 ie.printStackTrace();
             }
-
             while (!sendables.isEmpty()) {
 
                 Sendable sendable = sendables.remove(0);
+                System.out.println(sendable);
 
                 try {
                     outputStream.writeObject(sendable);
+                    outputStream.flush();
                 }
                 catch (IOException ioe) {
                     ioe.printStackTrace();

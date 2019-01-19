@@ -184,7 +184,7 @@ public class ClientFrame extends JFrame {
         pAbsencePlayer.add(tfAbsencePlayer);
 
         //initialization of port label and ip address panel
-        JLabel lPlayTime = new JLabel("Czas gry [sekundy]:");
+        JLabel lPlayTime = new JLabel("Szybkość poruszania bloków:");
         tfPlayTime = new JTextField("600000");
         pPlayTime.add(lPlayTime);
         pPlayTime.add(tfPlayTime);
@@ -193,6 +193,14 @@ public class ClientFrame extends JFrame {
         JButton bStartServer = new JButton("Uruchom server");
         bStartServer.addActionListener(new StartServerAction());
         pStartServerButton.add(bStartServer);
+
+
+        // initialization of server with from xml
+        JButton bStartServerXML = new JButton("Uruchom server z domyslnymi opcjami");
+////        bStartServer.add(new StartServerAction());
+        pStartServerButton.add(bStartServerXML);
+
+
 
         //set panels on server panel
         serverPanel.add(new JLabel("Hostuj grę"));

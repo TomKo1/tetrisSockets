@@ -89,7 +89,7 @@ public class ClientInput extends Thread {
             }
             //in case the connection is broken ... close and exit app
             catch (IOException ioe) {
-                JOptionPane.showMessageDialog(tetrisClient.getBattleField().getContentPane(), "Verbindung zu Server verloren!", "Fehler", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(tetrisClient.getBattleField().getContentPane(), "Połączenie z serverem utracone!", "Błąd", JOptionPane.ERROR_MESSAGE);
                 ioe.printStackTrace();
             }
             catch (ClassNotFoundException cnfe) {

@@ -1,6 +1,7 @@
 package com.template.method.server;
 
 import com.template.method.server.command.Serverable;
+import com.template.method.server.command.impl.BroadcastMessage;
 
 import java.io.*;
 import java.net.*;
@@ -65,18 +66,15 @@ public class ServerInput extends Thread {
             try {
                 //if there is no object to read the loop rests here
                 Object o = inputStream.readObject();
+                System.out.println(o);
 
                 if (o instanceof Serverable) {
                     ((Serverable) o).execute(tetrisServer);
                 }
             }
-            catch (IOException ioe) {
+            catch (IOException | ClassNotFoundException ioe) {
                 tetrisServer.getLog().error(ioe.getMessage());
                 ioe.printStackTrace();
-            }
-            catch (ClassNotFoundException cnfe) {
-                tetrisServer.getLog().error(cnfe.getMessage());
-                cnfe.printStackTrace();
             }
         }
     }
