@@ -121,7 +121,7 @@ public class ServerFrame extends JFrame implements Logable {
     /**
      * Prints parameter message to message area for server client traffic.
      *
-     * @param message String message to print on message area
+     * @param message Strifng message to print on message area
      */
     public void logMessage(String message) {
         viewLog.append(dateFormat.format(new Date()) + ": " + message + LINE_SEPARATOR);

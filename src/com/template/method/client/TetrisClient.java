@@ -43,6 +43,8 @@ public class TetrisClient implements Serializable {
     //tetris client socket to tetris server
     private Socket clientSocket;
 
+    private ChatFrame chatFrame;
+
     //tetris client name
     private String playerName = "Player";
 
@@ -122,6 +124,11 @@ public class TetrisClient implements Serializable {
         }
     }
 
+
+    public void  printReceivedMessage(String message) {
+        chatFrame.printReceivedMessage(message);
+    }
+
     /**
      * This method open a client socket to server. In addition initialize a input and a output
      * for this client. Furthermore the battle field, client name and start game request will be
@@ -167,11 +174,13 @@ public class TetrisClient implements Serializable {
         }
     }
 
+
+
     /**
      * Starts the Swing chat frame
      */
     private void startChatFrame() {
-        EventQueue.invokeLater(() -> new ChatFrame());
+        EventQueue.invokeLater(() -> new ChatFrame(this));
     }
 
     /**
