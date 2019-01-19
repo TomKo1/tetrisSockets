@@ -252,8 +252,10 @@ public class TetrisServer {
 
 
     public void broadcastToAllPlayers(String message) {
-        for(ServerOutput serverOutput : serverOutputs)
+        for(ServerOutput serverOutput : serverOutputs) {
+            System.out.println(message);
             serverOutput.addSendable(new ReceiveMessage(message));
+        }
     }
 
     /**

@@ -153,7 +153,6 @@ public class TetrisClient implements Serializable {
         */
         battleField = new BattleField(this, clientFrame);
         clientFrame.getTetrisFrame().addInternalFrame(battleField);
-//        clientFrame.getTetrisFrame().add(new ChatFrame());
 
         startChatFrame();
 
@@ -180,7 +179,8 @@ public class TetrisClient implements Serializable {
      * Starts the Swing chat frame
      */
     private void startChatFrame() {
-        EventQueue.invokeLater(() -> new ChatFrame(this));
+        chatFrame = new ChatFrame(this);
+        EventQueue.invokeLater(() -> chatFrame.start());
     }
 
     /**

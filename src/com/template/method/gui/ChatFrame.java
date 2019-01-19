@@ -4,6 +4,9 @@ import com.template.method.client.TetrisClient;
 import com.template.method.server.command.impl.BroadcastMessage;
 
 import javax.swing.*;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
 
 
 public class ChatFrame extends JFrame {
@@ -20,6 +23,9 @@ public class ChatFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(500, 500);
         initializeUI();
+    }
+
+    public void start() {
         setVisible(true);
     }
 
@@ -29,20 +35,25 @@ public class ChatFrame extends JFrame {
 
         setLayout(boxLayout);
 
-        this.jTextArea = new JTextArea();
-        jTextArea.setEditable(false);
-
-        add(jTextArea);
+        this.jTextArea = new JTextArea(24, 12);
+        JScrollPane jp = new JScrollPane(jTextArea);
+        add(jp, BorderLayout.CENTER);
 
         this.inputMessage = new JTextField();
         inputMessage.setSize(500, 50);
         add(inputMessage);
 
         JButton sendBtn = new JButton("Wyślij");
+
         sendBtn.addActionListener(e -> {
             String message = inputMessage.getText();
-            if(!message.isEmpty())
-                tetrisClient.getOutput().addSendable(new BroadcastMessage(message));
+
+            if(message != null && !message.isEmpty()) {
+                System.out.println("Message was sent!");
+                this.inputMessage.setText("");
+                String messageFormatted = String.format("%s:> %s\n", tetrisClient.getPlayerName(), message);
+                tetrisClient.getOutput().addSendable(new BroadcastMessage(messageFormatted));
+            }
         });
 
         add(sendBtn);

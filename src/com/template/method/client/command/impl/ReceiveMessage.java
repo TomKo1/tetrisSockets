@@ -12,6 +12,8 @@ public class ReceiveMessage implements Clientable {
     }
 
     public void execute(TetrisClient tetrisClient) {
+        System.out.println("Odbieram: " + message);
+
         tetrisClient.printReceivedMessage(message);
     }
 
