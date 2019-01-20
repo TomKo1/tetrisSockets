@@ -1,8 +1,5 @@
 package com.template.method.gui.battlefield;
 
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 import java.util.*;
 import java.util.List;
 import javax.swing.*;
@@ -121,7 +118,7 @@ public class BattleField extends JFrame {
 
             if (figures != null && figures.size() > 0) {
                 firstFigure = figures.remove(0);
-                clientFrame.addNextFigureForInfo((figures.get(0)).getColor());
+                clientFrame.previewNextFigure((figures.get(0)).getColor());
                 add(firstFigure);
                 validate();
             }
@@ -181,7 +178,7 @@ public class BattleField extends JFrame {
             System.out.println("set points command object");
 
             //send set points of client command
-            clientFrame.setClientPointsForInfo(10);
+            clientFrame.setPoints(10);
 
             tetrisClient.getOutput().addSendable(new ClientPoints(playerName, tetrisClient.getClientId(), 10));
             synchronized (tetrisClient.getClientDummy()) {
@@ -249,6 +246,53 @@ public class BattleField extends JFrame {
     /**
      * looking for complete lines on battleField, deleting them; move upper lines down; points
      */
+
+//    public void lineManager() {
+//        // mamy 20 rzedow
+//        boolean[] filled = new boolean[29];
+//
+//        int row = 0;
+//        // sprawdzamy od gory
+//        for (int i = this.blocksOnBattleField[0].length - 1; i > 1; i--) {
+//            System.out.println("Iteracja: " + row);
+//            // od lewej do prawej
+//            for (int j = 1; j < this.blocksOnBattleField.length; j++) {
+//                // jezeli ktorykolwiek z blokow jest rowny null to nie jest zapelniona
+//                // linia
+//                if(blocksOnBattleField[j][i] == null){
+//                    break;
+//                }
+////
+//                if(j == this.blocksOnBattleField.length -1) {
+//                    filled[row] = true;
+//                }
+//
+//            }
+//            row++;
+//        }
+//        System.out.println("Wykryte pelne rzedy: ");
+////
+//        for(int i = 0 ; i < 29 ; i++) {
+//            if(filled[i]) System.out.println("Rzad: " +  i);
+//        }
+//
+//    }
+
+    private void printOccupiedCelsArray() {
+
+        for(int i = 0 ; i < 13 ; i++) {
+            for(int j = 0 ; j < 31 ; j++) {
+                String text = blocksOnBattleField[i][j] != null ? "|" : "O";
+                System.out.print(text);
+            }
+            System.out.println();
+        }
+    }
+
+
+    /**
+     * looking for complete lines on battleField, deleting them; move upper lines down; points
+     */
     public void lineManager() {
         boolean filled = true;
         boolean moveDown = false;
@@ -304,13 +348,15 @@ public class BattleField extends JFrame {
             add(bfr);
             paintBlocksOnBattleField();
             //send set points of client command
-            this.clientFrame.setClientPointsForInfo(100);
+            this.clientFrame.setPoints(100);
             tetrisClient.getOutput().addSendable(new ClientPoints(playerName, tetrisClient.getClientId(), 100));
             synchronized (tetrisClient.getClientDummy()) {
                 tetrisClient.getClientDummy().notifyAll();
             }
         }
     }
+
+
 
     /**
      * Check if the parameter figure is allowed for shift left.
@@ -564,7 +610,7 @@ public class BattleField extends JFrame {
      * @param points int
      */
     public void showFinalPoints(int points) {
-        JOptionPane.showMessageDialog(this, "Sie haben insgesamt: " + points + " Punkte erreicht!", "Spiel zu Ende...", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Zdobyłeś: " + points + " punktów.", "Koniec gry", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /**

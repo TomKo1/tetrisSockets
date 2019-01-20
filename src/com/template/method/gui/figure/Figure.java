@@ -867,4 +867,5 @@ public class Figure extends JComponent implements Serializable {
         this.removeAll();
     }
 
+
 }

@@ -120,7 +120,7 @@ public class TetrisClient implements Serializable {
             this.run();
         }
         catch (IOException e) {
-            JOptionPane.showMessageDialog(clientFrame.getContentPane(), "Nie można  " + host + ":" + port + " kein Server gefunden werden!", "Verbindungsfehler", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(clientFrame.getContentPane(), "Nie można znalezc dzialajacego servera:" + host + ":" + port, "Blad polaczenia", JOptionPane.ERROR_MESSAGE);
         }
     }
 

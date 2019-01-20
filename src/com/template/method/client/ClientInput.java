@@ -40,8 +40,6 @@ public class ClientInput extends Thread {
     //tetris server
     protected TetrisServer tetrisServer;
 
-    //first time boolean
-    public boolean firstTime = true;
 
     /**
      * Initialization of server socket, tetris client and ObjectInputStream.

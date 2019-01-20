@@ -43,11 +43,16 @@ public class ClientFrame extends JFrame {
     //points panel in client panel
     public JPanel pointsPanel = null;
 
-    //singleplayer button
-    private JButton bSinglePlayer = null;
+    private JButton defaultStartServerBtn;
+
+    private JButton startServerBtn;
+
 
     //mutliplayer button
-    private JButton bMultiPlayer = null;
+    private JButton joinGameBtn = null;
+
+    // flag checking if server is already running
+    private boolean isServerRunning = false;
 
     //text field for input name, ip, port, serverPort, absence player, playtime
     private JTextField clientName = null;
@@ -66,89 +71,150 @@ public class ClientFrame extends JFrame {
     //used for nextFigureForInfoPanel -> the last visible figure
     protected Figure lastFigure = null;
 
-    /**
-     * constructor initialize client panel
-     */
+
+    private ActionListener hostAction = e -> {
+        if (clientName.getText().equals("") || host.getText().equals("")) {
+            joinGameBtn.setEnabled(false);
+            JOptionPane.showMessageDialog(tetrisFrame, "", "Blad", 2);
+        }
+        else {
+            joinGameBtn.setEnabled(true);
+        }
+    };
+
+
+    private ActionListener startServerAction = e -> {
+        Integer serverPort;
+        Integer players;
+        Integer playTime;
+        if(isServerRunning) JOptionPane.showMessageDialog(this.getContentPane(), "Nie można uruchomić dwa razy servera na tej samej maszynie!", "Uwaga!", JOptionPane.INFORMATION_MESSAGE);
+
+
+        if(((JButton)e.getSource()).getText().equals("Uruchom server z domyślnymi opcjami")) {
+            XMLParser.Configuration configuration = XMLParser.parseConfiguration("./src/com/template/method/server/configuration.xml");
+            serverPort = configuration.getPort();
+            players = configuration.getPlayerCount();
+            playTime = configuration.getPlayTime();
+        } else {
+            serverPort = Integer.parseInt(tfServerPort.getText());
+            players = Integer.parseInt(tfAbsencePlayer.getText());
+            playTime = Integer.parseInt(tfPlayTime.getText());
+        }
+        isServerRunning = true;
+        defaultStartServerBtn.setEnabled(false);
+        startServerBtn.setEnabled(false);
+
+        new ServerFrame(serverPort, players, playTime, tetrisFrame);
+    };
+
+
     public ClientFrame(TetrisFrame tf) {
         tetrisFrame = tf;
         try {
-            clientPanelInit();
-            panelInit();
+            createPanels();
+            initUI();
         }
         catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+
     /**
-     * Initialization of client tetrisFrame panel.
+     * Creates accurate panels which will be later filled with available options.
      *
-     * @throws Exception InitialException
      */
-    private void clientPanelInit() throws Exception {
-        clientServerPanel = new JPanel();
-        //clientServerPanel.setPreferredSize(new Dimension(300, 600));
-        clientServerPanel.setLayout(new GridLayout(3, 1, 0, 40));
-        clientServerPanel.setVisible(true);
+    private void createPanels() {
+        clientServerPanel = createJPanel(new GridLayout(3, 1, 0, 40), true);
+        clientPanel = createJPanel(new GridLayout(6,1), true);
+        serverPanel = createJPanel(new GridLayout(6,1), true);
+        figurePanel = createJPanel(new GridLayout(2,1), true);
+        pointsPanel = createJPanel(new GridLayout(1,2), true);
 
-        clientPanel = new JPanel();
-        clientPanel.setLayout(new GridLayout(6, 1));
-        clientPanel.setVisible(true);
 
-        serverPanel = new JPanel();
-        serverPanel.setLayout(new GridLayout(6, 1));
-        serverPanel.setVisible(true);
-
-        figurePanel = new JPanel();
-        figurePanel.setLayout(new GridLayout(2, 1));
         JLabel figureLabel = new JLabel("Następny klocek:");
+
         figurePanel.add(figureLabel);
         figurePanel.setVisible(true);
 
-        pointsPanel = new JPanel();
-        pointsPanel.setLayout(new GridLayout(1, 2));
-        pointsPanel.setVisible(true);
     }
 
     /**
-     * Panels for client tetrisFrame.
-     *
-     * @throws Exception InitialException
+     * Creates JPanel using given layout and setting its visibility
+     * @param layout layout of JPanel
+     * @param isVisible value specifying if the JPanel's visibility
+     * @return configured JPanel
      */
-    private void panelInit() throws Exception {
+
+    private JPanel createJPanel(LayoutManager layout, boolean isVisible) {
+        JPanel jPanel = new JPanel();
+        jPanel.setLayout(layout);
+        jPanel.setVisible(isVisible);
+
+        return jPanel;
+    }
+
+    /**
+     * Fills panels with available functionalities created by createPanels() method
+     */
+    //TODO: refactor
+    private void initUI() {
         //initialization of panels for client panel
-        JPanel pName = new JPanel(new GridLayout(1, 2));
-        JPanel pIP = new JPanel(new GridLayout(1, 2));
-        JPanel pPort = new JPanel(new GridLayout(1, 2));
+        JPanel pName = createJPanel(new GridLayout(1, 2), true);
+        JPanel pIP =  createJPanel(new GridLayout(1, 2), true);
+        JPanel pPort = createJPanel(new GridLayout(1, 2), true);
         JPanel pMultiSingleButton = new JPanel(new GridLayout(1, 2));
+
 
         //initialization of name label and name text field panel
         JLabel lClientName = new JLabel("Nazwa gracza:");
         clientName = new JTextField();
-        clientName.addActionListener(new ClientNameAction());
+        clientName.addActionListener( e -> {
+            if (clientName.getText().equals("")) {
+                joinGameBtn.setEnabled(false);
+                JOptionPane.showMessageDialog(tetrisFrame, "Prosze podac nazwe gracza!", "Blad", 2);
+            }
+            else if (!clientName.getText().equals("") || !host.getText().equals("")) {
+                joinGameBtn.setEnabled(true);
+            }
+            else {
+                joinGameBtn.setEnabled(false);
+            }
+        });
         pName.add(lClientName);
         pName.add(clientName);
 
         //initialization of ip label and ip address panel
         JLabel lIP = new JLabel("IP hosta:");
         host = new JTextField("localhost");
-        host.addActionListener(new HostAction());
+        host.addActionListener(e -> {
+
+        });
+
+
         pIP.add(lIP);
         pIP.add(host);
 
         //initialization of port label and ip address panel
         JLabel lPort = new JLabel("Port servera:");
         port = new JTextField("8181");
-        port.addActionListener(new HostAction());
+        port.addActionListener(hostAction);
         pPort.add(lPort);
         pPort.add(port);
 
 
+
         //initialization of mutliplayer button
-        bMultiPlayer = new JButton("Dołącz do gry");
-        bMultiPlayer.addActionListener(new MultiPlayerAction());
-        bMultiPlayer.setEnabled(true);
-        pMultiSingleButton.add(bMultiPlayer);
+        joinGameBtn = new JButton("Dołącz do gry");
+        joinGameBtn.addActionListener(e -> {
+            String host = ClientFrame.this.host.getText();
+                Integer port = Integer.parseInt(ClientFrame.this.port.getText());
+                String clientName = ClientFrame.this.clientName.getText();
+
+                new ThreadTetrisClient(host, port, clientName, ClientFrame.this);
+        });
+        joinGameBtn.setEnabled(true);
+        pMultiSingleButton.add(joinGameBtn);
 
         //initialization of points panel
         JLabel pointsLabel = new JLabel("Punkty: ");
@@ -191,15 +257,15 @@ public class ClientFrame extends JFrame {
         pPlayTime.add(tfPlayTime);
 
         //initialization of server start button panel
-        JButton bStartServer = new JButton("Uruchom server");
-        bStartServer.addActionListener(new StartServerAction());
-        pStartServerButton.add(bStartServer);
+        this.startServerBtn = new JButton("Uruchom server");
+        startServerBtn.addActionListener(startServerAction);
+        pStartServerButton.add(startServerBtn);
 
 
         // initialization of server with from xml
-        JButton bStartServerXML = new JButton("Uruchom server z domyślnymi opcjami");
-        bStartServerXML.addActionListener(new StartServerAction());
-        pStartServerButton.add(bStartServerXML);
+        this.defaultStartServerBtn = new JButton("Uruchom server z domyślnymi opcjami");
+        defaultStartServerBtn.addActionListener(startServerAction);
+        pStartServerButton.add(defaultStartServerBtn);
 
 
 
@@ -216,12 +282,14 @@ public class ClientFrame extends JFrame {
         clientServerPanel.add(figurePanel);
     }
 
+
+
     /**
-     * Prints the next tetris figure on tetris tetrisFrame.
+     * Shows preview of the next figure base on its color
      *
-     * @param color Color Tetris figure color
+     * @param color color of tetris figure
      */
-    public void addNextFigureForInfo(Color color) {
+    public void previewNextFigure(Color color) {
         if (lastFigure != null) {
             figurePanel.remove(lastFigure);
         }
@@ -259,7 +327,7 @@ public class ClientFrame extends JFrame {
      *
      * @param points int Points to add with clientPoints and set on points panel
      */
-    public void setClientPointsForInfo(int points) {
+    public void setPoints(int points) {
         pointsPanel.remove(lPoints);
         clientPoints += points;
         lPoints = new JLabel(Integer.toString(clientPoints));
@@ -269,80 +337,71 @@ public class ClientFrame extends JFrame {
     }
 
 
-    class ClientNameAction implements ActionListener {
-
-        public void actionPerformed(ActionEvent e) {
-            if (clientName.getText().equals("")) {
-                bSinglePlayer.setEnabled(false);
-                bMultiPlayer.setEnabled(false);
-                JOptionPane.showMessageDialog(tetrisFrame, "Prosze podac nazwe gracza!", "Blad", 2);
-            }
-            else if (!clientName.getText().equals("") || !host.getText().equals("")) {
-                bSinglePlayer.setEnabled(true);
-                bMultiPlayer.setEnabled(true);
-            }
-            else {
-                bSinglePlayer.setEnabled(true);
-                bMultiPlayer.setEnabled(false);
-            }
-        }
+    public ActionListener getHostAction() {
+        return hostAction;
     }
 
-    class HostAction implements ActionListener {
-
-        public void actionPerformed(ActionEvent e) {
-            if (clientName.getText().equals("") || host.getText().equals("")) {
-                bSinglePlayer.setEnabled(false);
-                bMultiPlayer.setEnabled(false);
-                JOptionPane.showMessageDialog(tetrisFrame, "", "Fehler", 2);
-            }
-            else {
-                bSinglePlayer.setEnabled(true);
-                bMultiPlayer.setEnabled(true);
-            }
-        }
+    public ActionListener getStartServerAction() {
+        return startServerAction;
     }
 
-    class StartServerAction implements ActionListener {
-
-        public void actionPerformed(ActionEvent e) {
-            Integer serverPort = null;
-            Integer players = null;
-            Integer playTime = null;
-
-            if(((JButton)e.getSource()).getText().equals("Uruchom server z domyślnymi opcjami")) {
-                XMLParser.Configuration configuration = XMLParser.parseConfiguration("./src/com/template/method/server/configuration.xml");
-                serverPort = configuration.getPort();
-                players = configuration.getPlayerCount();
-                playTime = configuration.getPlayTime();
-            } else {
-                serverPort = Integer.parseInt(ClientFrame.this.tfServerPort.getText());
-                players = Integer.parseInt(tfAbsencePlayer.getText());
-                playTime = Integer.parseInt(tfPlayTime.getText());
-            }
-
-            new ServerFrame(serverPort, players, playTime, tetrisFrame);
-        }
+    public JPanel getClientPanel() {
+        return clientPanel;
     }
 
-
-    class MultiPlayerAction implements ActionListener {
-
-        public void actionPerformed(ActionEvent e) {
-            String host = ClientFrame.this.host.getText();
-            Integer port = Integer.parseInt(ClientFrame.this.port.getText());
-            String clientName = ClientFrame.this.clientName.getText();
-
-            new ThreadTetrisClient(host, port, clientName, ClientFrame.this);
-        }
+    public JPanel getServerPanel() {
+        return serverPanel;
     }
 
-    /**
-     * Returns actual tetris tetrisFrame window.
-     *
-     * @return TetrisFrame Tetris tetrisFrame window
-     */
-    public TetrisFrame getTetrisFrame() {
-        return tetrisFrame;
+    public JPanel getFigurePanel() {
+        return figurePanel;
+    }
+
+    public JButton getDefaultStartServerBtn() {
+        return defaultStartServerBtn;
+    }
+
+    public JButton getStartServerBtn() {
+        return startServerBtn;
+    }
+
+    public JButton getJoinGameBtn() {
+        return joinGameBtn;
+    }
+
+    public JTextField getClientName() {
+        return clientName;
+    }
+
+    public JTextField getHost() {
+        return host;
+    }
+
+    public JTextField getPort() {
+        return port;
+    }
+
+    public JTextField getTfServerPort() {
+        return tfServerPort;
+    }
+
+    public JTextField getTfAbsencePlayer() {
+        return tfAbsencePlayer;
+    }
+
+    public JTextField getTfPlayTime() {
+        return tfPlayTime;
+    }
+
+    public JPanel getClientServerPanel() {
+        return clientServerPanel;
+    }
+
+    public JPanel getPointsPanel() {
+        return pointsPanel;
+    }
+
+    public Figure getLastFigure() {
+        return lastFigure;
     }
 }
