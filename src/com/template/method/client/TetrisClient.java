@@ -120,7 +120,7 @@ public class TetrisClient implements Serializable {
             this.run();
         }
         catch (IOException e) {
-            JOptionPane.showMessageDialog(clientFrame.getContentPane(), "Es konnte an " + host + ":" + port + " kein Server gefunden werden!", "Verbindungsfehler", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(clientFrame.getContentPane(), "Nie można  " + host + ":" + port + " kein Server gefunden werden!", "Verbindungsfehler", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -152,9 +152,9 @@ public class TetrisClient implements Serializable {
         * before input start.
         */
         battleField = new BattleField(this, clientFrame);
-        clientFrame.getTetrisFrame().addInternalFrame(battleField);
 
-        startChatFrame();
+        battleField.setVisible(true);
+
 
         input.start();
 
@@ -174,14 +174,16 @@ public class TetrisClient implements Serializable {
     }
 
 
-
     /**
      * Starts the Swing chat frame
      */
-    private void startChatFrame() {
+    public void showChatFrame() {
+
         chatFrame = new ChatFrame(this);
         EventQueue.invokeLater(() -> chatFrame.start());
+
     }
+
 
     /**
      * Returns tetris client socket.
@@ -196,7 +198,7 @@ public class TetrisClient implements Serializable {
      * Output game start.
      */
     public void startGame() {
-        System.out.println(playerName + ": Spiel gestartet.");
+        System.out.println(playerName + ": gra rozpoczęta!");
     }
 
     /**

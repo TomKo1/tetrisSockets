@@ -1,5 +1,8 @@
 package com.template.method.gui.battlefield;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.util.*;
 import java.util.List;
 import javax.swing.*;
@@ -26,7 +29,8 @@ import com.template.method.server.command.impl.StopGameRequest;
  * @version 1.0
  */
 
-public class BattleField extends JInternalFrame {
+// JInternalFrame
+public class BattleField extends JFrame {
 
     //figure list with tetris figures
     protected List<Figure> figures = null;
@@ -77,11 +81,11 @@ public class BattleField extends JInternalFrame {
      */
     public BattleField(TetrisClient tetrisClient, ClientFrame clientFrame) {
         super("Battle Field");
-        //tetrisFrame = clientFrame.getTetrisFrame();
-        //desktopPane = tetrisFrame.desktopPane;
 
-        //JFrame.setDefaultLookAndFeelDecorated(true);
-        setClosable(true);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+
+
+        setResizable(false);
         setPreferredSize(new Dimension(290, 490));
         setSize(new Dimension(290, 490));
         addKeyListener(new BattleFieldKeyListener(this));
@@ -92,7 +96,6 @@ public class BattleField extends JInternalFrame {
 
         bfr = new BattleFieldRect();
         add(bfr);
-
         this.clientFrame = clientFrame;
 
         figures = new ArrayList<Figure>();

@@ -1,0 +1,15 @@
+package com.template.method.client.command.impl;
+
+import com.template.method.client.TetrisClient;
+import com.template.method.client.command.Clientable;
+
+public class StartChat implements Clientable {
+
+    public void execute(TetrisClient tetrisClient) {
+        tetrisClient.showChatFrame();
+    }
+
+    public String getMessageKey() {
+        return "com.template.method.client.StartChat";
+    }
+}

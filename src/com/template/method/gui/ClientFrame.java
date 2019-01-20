@@ -275,7 +275,7 @@ public class ClientFrame extends JFrame {
             if (clientName.getText().equals("")) {
                 bSinglePlayer.setEnabled(false);
                 bMultiPlayer.setEnabled(false);
-                JOptionPane.showMessageDialog(tetrisFrame, "Bitte Spielername eingeben!", "Fehler", 2);
+                JOptionPane.showMessageDialog(tetrisFrame, "Prosze podac nazwe gracza!", "Blad", 2);
             }
             else if (!clientName.getText().equals("") || !host.getText().equals("")) {
                 bSinglePlayer.setEnabled(true);
@@ -294,7 +294,7 @@ public class ClientFrame extends JFrame {
             if (clientName.getText().equals("") || host.getText().equals("")) {
                 bSinglePlayer.setEnabled(false);
                 bMultiPlayer.setEnabled(false);
-                JOptionPane.showMessageDialog(tetrisFrame, "Bitte Spielername eingeben!", "Fehler", 2);
+                JOptionPane.showMessageDialog(tetrisFrame, "", "Fehler", 2);
             }
             else {
                 bSinglePlayer.setEnabled(true);

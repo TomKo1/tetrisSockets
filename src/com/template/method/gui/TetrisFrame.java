@@ -45,7 +45,7 @@ public class TetrisFrame extends JFrame {
         super("Tetris Frame");
         try {
             tetrisFrameInit();
-            //new ClientFrame();
+            setSize(2000, 1000);
         }
         catch (Exception e) {
             e.printStackTrace();

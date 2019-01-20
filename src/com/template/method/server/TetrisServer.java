@@ -1,9 +1,6 @@
 package com.template.method.server;
 
-import com.template.method.client.command.impl.ClientId;
-import com.template.method.client.command.impl.FigureResponse;
-import com.template.method.client.command.impl.Points;
-import com.template.method.client.command.impl.ReceiveMessage;
+import com.template.method.client.command.impl.*;
 import com.template.method.command.Sendable;
 import com.template.method.gui.figure.Figure;
 import com.template.method.server.command.impl.StartGameRequest;
@@ -186,6 +183,8 @@ public class TetrisServer {
         for (ServerOutput serverOutput : serverOutputs) {
             serverOutput.addSendable(new StartGameRequest());
             log.info("The server sends the start game command.");
+            serverOutput.addSendable(new StartChat());
+            log.info("The servers sends start chat command");
         }
 
         //TimerTask tick
