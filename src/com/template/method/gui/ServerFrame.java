@@ -29,9 +29,6 @@ public class ServerFrame implements Logable {
 
     private TetrisFrame tetrisFrame;
 
-    //text area for server client traffic
-    private JTextArea viewLog;
-
     //server port
     protected int port = 8181;
 
@@ -46,17 +43,18 @@ public class ServerFrame implements Logable {
 
     private DateFormat dateFormat = DateFormat.getDateTimeInstance();
 
+
     /**
-     * Initialization of tetris server tetrisFrame with port, number of players, play time and tetris tetrisFrame window.
+     * Initialization of tetris server tetrisFrame with port, numberOfPlayers of players, play time and tetris tetrisFrame window.
      */
-    public ServerFrame(int port, int number, int playTime, TetrisFrame tetrisFrame) {
+    public ServerFrame(int port, int numberOfPlayers, int playTime, TetrisFrame tetrisFrame) {
 
         this.tetrisFrame = tetrisFrame;
         this.tetrisFrame.initServerLog();
 
         try {
             this.port = port;
-            this.numberPlayers = number;
+            this.numberPlayers = numberOfPlayers;
             this.playTime = playTime;
 
             new ThreadServer(port, numberPlayers, playTime, this);
@@ -82,5 +80,10 @@ public class ServerFrame implements Logable {
      */
     public void logMessage(String message) {
         tetrisFrame.printServerLog(dateFormat.format(new Date()) + ": " + message + LINE_SEPARATOR);
+    }
+
+
+    public TetrisFrame getTetrisFrame() {
+        return  tetrisFrame;
     }
 }

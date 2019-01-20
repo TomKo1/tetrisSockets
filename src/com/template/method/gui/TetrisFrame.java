@@ -105,4 +105,9 @@ public class TetrisFrame extends JFrame {
         }
         new TetrisFrame();
     }
+
+
+    public JTextArea getServerLogTextArea() {
+        return serverLogTextArea;
+    }
 }
