@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df5d59e6-b411-4987-94d7-fe9c0507f07a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/template/method/client/command/impl/StartChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/client/TetrisClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/client/TetrisClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/ChatFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/ChatFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/ClientFrame$ClientNameAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/ClientFrame$ClientNameAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/ClientFrame$HostAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/ClientFrame$HostAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/TetrisFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/TetrisFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/battlefield/BattleField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/battlefield/BattleField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/server/TetrisServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/server/TetrisServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/template/method/client/TetrisClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/client/TetrisClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/template/method/gui/ChatFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/gui/ChatFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/template/method/gui/ClientFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/gui/ClientFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/template/method/gui/ServerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/gui/ServerFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/template/method/server/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/server/XMLParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/template/method/server/configuration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/server/configuration.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/template/method/gui/TetrisFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/gui/TetrisFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/template/method/server/TetrisServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/server/TetrisServer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,36 +29,37 @@
     <session id="1311002206">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="151" />
+          <entry key="java" value="164" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="151" />
+          <entry key="JAVA" value="164" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="24" />
-          <entry key="java" value="6236" />
+          <entry key="java" value="7015" />
           <entry key="xml" value="95" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6236" />
+          <entry key="JAVA" value="7015" />
           <entry key="PLAIN_TEXT" value="24" />
           <entry key="XML" value="95" />
         </counts>
@@ -55,14 +67,14 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.4588452">
       <split-first>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/template/method/server/ServerInput.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="54" column="33" lean-forward="true" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+                <state relative-caret-position="235">
+                  <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -73,10 +85,12 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/template/method/server/ServerOutput.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="608">
-                  <caret line="95" column="49" selection-start-line="95" selection-start-column="49" selection-end-line="95" selection-end-column="49" />
+                <state relative-caret-position="270">
+                  <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#1085#1086#0" expanded="true" />
+                    <element signature="e#1124#1125#0" expanded="true" />
                     <element signature="e#1230#1231#0" expanded="true" />
                     <element signature="e#1262#1263#0" expanded="true" />
                   </folding>
@@ -84,11 +98,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/ClientFrame.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="155">
-                  <caret line="306" lean-forward="true" selection-start-line="306" selection-end-line="306" />
+                <state relative-caret-position="260">
+                  <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -97,28 +111,54 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/template/method/server/configuration.xml">
+            <entry file="file://$PROJECT_DIR$/src/com/template/method/client/TetrisClient.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+                <state relative-caret-position="531">
+                  <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#3467#3468#0" expanded="true" />
+                    <element signature="e#3522#3523#0" expanded="true" />
+                    <element signature="e#5301#5302#0" expanded="true" />
+                    <element signature="e#5369#5370#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Main.java">
+            <entry file="file://$PROJECT_DIR$/src/com/template/method/client/ClientInput.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+                <state relative-caret-position="360">
+                  <caret line="74" column="33" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/com/template/method/client/command/impl/StartChat.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#252#253#0" expanded="true" />
+                    <element signature="e#279#280#0" expanded="true" />
+                    <element signature="e#308#309#0" expanded="true" />
+                    <element signature="e#336#337#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/template/method/server/TetrisServer.java">
+            <entry file="file://$PROJECT_DIR$/src/com/template/method/client/command/Clientable.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="669">
-                  <caret line="118" column="31" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="31" />
+                <state relative-caret-position="285">
+                  <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="20" selection-end-column="34" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -127,33 +167,35 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/TetrisFrame.java">
+            <entry file="file://$PROJECT_DIR$/src/com/template/method/client/command/impl/StartClient.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="543">
-                  <caret line="109" column="36" lean-forward="true" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
+                <state relative-caret-position="285">
+                  <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#491#492#0" expanded="true" />
+                    <element signature="e#531#532#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/template/method/server/ThreadServer.java">
+            <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleField.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="570">
-                  <caret line="38" column="23" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="23" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/ServerFrame.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="335">
-                  <caret line="51" column="22" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="22" />
+                <state relative-caret-position="505">
+                  <caret line="397" column="26" lean-forward="true" selection-start-line="397" selection-start-column="26" selection-end-line="397" selection-end-column="26" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#3352#3353#0" expanded="true" />
-                    <element signature="e#3387#3388#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleFieldKeyListener.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="197">
+                  <caret line="44" selection-start-line="44" selection-end-line="44" />
                 </state>
               </provider>
             </entry>
@@ -161,12 +203,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/ClientFrame.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="313" selection-start-line="313" selection-end-line="313" />
+                <state relative-caret-position="289">
+                  <caret line="257" column="41" lean-forward="true" selection-start-line="257" selection-start-column="41" selection-end-line="257" selection-end-column="41" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -177,11 +219,32 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/template/method/server/XMLParser.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
+                <state relative-caret-position="240">
                   <caret line="27" selection-start-line="27" selection-end-line="27" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/com/template/method/server/TetrisServer.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="396">
+                  <caret line="173" column="38" lean-forward="true" selection-start-line="173" selection-start-column="38" selection-end-line="173" selection-end-column="38" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/template/method/server/command/impl/StartGameRequest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="390">
+                  <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -199,26 +262,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Spiel</find>
-      <find>Dołą</find>
-      <find>Dołącz</find>
-      <find>tetrisFrame</find>
-      <find>getInte</find>
-      <find>Sendable</find>
-      <find>ClientFrame</find>
-      <find>infor</find>
-      <find>error</find>
-      <find>set</find>
-      <find>chatFrame</find>
-      <find>tickDummy</find>
-      <find>ServerSocket</find>
-      <find>Czas</find>
-      <find>write</find>
-      <find>writ</find>
-      <find>Tick</find>
-      <find>StartGameReq</find>
-      <find>clientDummy</find>
-      <find>getOutput</find>
       <find>sendables</find>
       <find>getOutp</find>
       <find>Uruchom</find>
@@ -226,9 +269,29 @@
       <find>runTetrisServer</find>
       <find>ThreadServer</find>
       <find>Uruchom ser</find>
-      <find>new ServerFrame</find>
       <find>pStartServerButton</find>
       <find>XMLP</find>
+      <find>setVisi</find>
+      <find>new TetrisFrame</find>
+      <find>new ServerFrame</find>
+      <find>addI</find>
+      <find>addInt</find>
+      <find>addIn</find>
+      <find>tetrisFrame</find>
+      <find>addInter</find>
+      <find>InternalF</find>
+      <find>addIntern</find>
+      <find>StartGame</find>
+      <find>button</find>
+      <find>Doł</find>
+      <find>setVisible</find>
+      <find>startCha</find>
+      <find>showC</find>
+      <find>startGame</find>
+      <find>show</find>
+      <find>StartClient</find>
+      <find>playerC</find>
+      <find>The absen</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/com/template/method/gui</dir>
@@ -242,40 +305,42 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/template/method/server/command/Serverable.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleFieldKeyListener.java" />
-        <option value="$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleField.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/client/command/Clientable.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/server/ThreadServer.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/server/command/impl/FigureRequest.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/server/command/Tickable.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/client/ThreadTetrisClient.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/template/method/gui/TetrisFrame.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/client/command/impl/SendMessage.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/server/command/impl/BroadcastMessage.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/client/command/impl/ReceiveMessage.java" />
-        <option value="$PROJECT_DIR$/src/com/template/method/client/TetrisClient.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/gui/utilities/ScrollingTextArea.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/gui/utilities/ScrollableTextArea.java" />
-        <option value="$PROJECT_DIR$/src/com/template/method/gui/ChatFrame.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/server/command/impl/StopGameRequest.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/server/MessageListener.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/client/ClientInput.java" />
-        <option value="$PROJECT_DIR$/src/com/template/method/server/ServerOutput.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/server/ServerInput.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/client/ClientOutput.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/configuration.xml" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/template/method/server/TetrisServer.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/gui/ServerFrame.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/server/XMLParser.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/server/configuration.xml" />
+        <option value="$PROJECT_DIR$/src/com/template/method/gui/TetrisFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleField.java" />
+        <option value="$PROJECT_DIR$/src/com/template/method/gui/ChatFrame.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/gui/ClientFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/template/method/client/TetrisClient.java" />
+        <option value="$PROJECT_DIR$/src/com/template/method/client/command/impl/StartClient.java" />
+        <option value="$PROJECT_DIR$/src/com/template/method/server/ServerOutput.java" />
+        <option value="$PROJECT_DIR$/src/com/template/method/client/command/impl/StartChat.java" />
+        <option value="$PROJECT_DIR$/src/com/template/method/server/TetrisServer.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="75" />
-    <option name="y" value="66" />
+    <option name="x" value="308" />
+    <option name="y" value="106" />
     <option name="width" value="2032" />
     <option name="height" value="1154" />
   </component>
@@ -310,6 +375,37 @@
               <item name="tetrisApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="method" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tetrisApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tetrisApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="method" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tetrisApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tetrisApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="method" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tetrisApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tetrisApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="method" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tetrisApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tetrisApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="method" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -319,6 +415,23 @@
               <item name="method" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="tetrisApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tetrisApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="method" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tetrisApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tetrisApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="method" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -326,7 +439,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547940545278" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547977146123" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -418,10 +531,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="75" y="66" width="2032" height="1154" extended-state="0" />
+    <frame x="308" y="106" width="2032" height="1154" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18040201" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18190955" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -431,7 +544,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32985783" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19303201" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3032015" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -465,14 +578,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleFieldRect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/figure/Block.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1409">
@@ -564,27 +669,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/client/ThreadTetrisClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="56" column="29" lean-forward="true" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/template/method/server/command/impl/FigureRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="563" column="132" selection-start-line="563" selection-start-column="132" selection-end-line="563" selection-end-column="132" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -634,13 +722,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/utilities/ScrollableTextArea.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/client/command/impl/StartClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="24" column="56" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/template/method/client/command/impl/ReceiveMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -657,16 +738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/client/command/Clientable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="20" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/template/method/server/command/impl/StopGameRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -677,16 +748,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/MessageListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/MessageListener.java" />
     <entry file="file://$PROJECT_DIR$/src/com/template/method/server/command/impl/BroadcastMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -722,49 +784,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/command/impl/StartGameRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="794" column="29" selection-start-line="794" selection-start-column="29" selection-end-line="794" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/ChatFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/client/ClientInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="74" column="33" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/client/TetrisClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="164" column="47" selection-start-line="164" selection-start-column="31" selection-end-line="164" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3467#3468#0" expanded="true" />
-            <element signature="e#3522#3523#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -780,18 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/ServerOutput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="95" column="49" selection-start-line="95" selection-start-column="49" selection-end-line="95" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1230#1231#0" expanded="true" />
-            <element signature="e#1262#1263#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.xml/org/xml/sax/SAXException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -799,49 +810,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/ThreadServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="23" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/ServerInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="54" column="33" lean-forward="true" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/ServerFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="51" column="22" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3352#3353#0" expanded="true" />
-            <element signature="e#3387#3388#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/XMLParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/template/method/server/configuration.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -852,10 +824,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/TetrisServer.java">
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/ThreadServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="118" column="31" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="31" />
+        <state relative-caret-position="570">
+          <caret line="38" column="23" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/XMLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -864,15 +843,163 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/TetrisFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="109" column="36" lean-forward="true" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
+        <state relative-caret-position="360">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding>
+            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#910#911#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/ServerFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="91" column="50" lean-forward="true" selection-start-line="91" selection-start-column="50" selection-end-line="91" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/ChatFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="22" column="61" lean-forward="true" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/client/ThreadTetrisClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="44" column="25" lean-forward="true" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleFieldKeyListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="397" column="26" lean-forward="true" selection-start-line="397" selection-start-column="26" selection-end-line="397" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/client/command/impl/StartClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding>
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/client/TetrisClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3467#3468#0" expanded="true" />
+            <element signature="e#3522#3523#0" expanded="true" />
+            <element signature="e#5301#5302#0" expanded="true" />
+            <element signature="e#5369#5370#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/ServerInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/ClientFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="306" lean-forward="true" selection-start-line="306" selection-end-line="306" />
+        <state relative-caret-position="289">
+          <caret line="257" column="41" lean-forward="true" selection-start-line="257" selection-start-column="41" selection-end-line="257" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/command/impl/StartGameRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/client/ClientInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="74" column="33" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/ServerOutput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1085#1086#0" expanded="true" />
+            <element signature="e#1124#1125#0" expanded="true" />
+            <element signature="e#1230#1231#0" expanded="true" />
+            <element signature="e#1262#1263#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/client/command/Clientable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="20" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/client/command/impl/StartChat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#279#280#0" expanded="true" />
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/TetrisServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="173" column="38" lean-forward="true" selection-start-line="173" selection-start-column="38" selection-end-line="173" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

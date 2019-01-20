@@ -20,7 +20,7 @@ public class ChatFrame extends JFrame {
     public ChatFrame(TetrisClient tetrisClient) {
         super("Chat frame");
         this.tetrisClient = tetrisClient;
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setSize(500, 500);
         initializeUI();
     }
