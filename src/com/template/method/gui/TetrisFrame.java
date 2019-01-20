@@ -22,18 +22,33 @@ public class TetrisFrame extends JFrame {
     //tetris tetrisFrame -> heart of this tetris
     //public JFrame tetrisFrame = null;
 
-    //tetris tetrisFrame desktop pane
-    private JDesktopPane desktopPane = null;
+    // server log area
+    private JTextArea serverLogTextArea = new JTextArea();
 
-    public void addInternalFrame(JInternalFrame internalFrame) {
-        desktopPane.add(internalFrame);
+
+    public void initServerLog() {
+
+
+
+        JPanel serverPanel = new JPanel();
+        setSize(2500, 1000);
+        serverLogTextArea.append("Server started!\n");
+
+        serverLogTextArea.setPreferredSize(new Dimension(1600, 1200));
+        serverLogTextArea.setEditable(false);
+        serverPanel.add(serverLogTextArea);
+
+        getContentPane().add(serverPanel, BorderLayout.CENTER);
+
+    }
+
+    public void printServerLog(String log) {
+        serverLogTextArea.append(log);
     }
 
     //client server panel
     private JPanel pClientServer = null;
 
-    //menu item new game
-    private JMenuItem mGameNew = null;
 
     //tetris client tetrisFrame
     public ClientFrame cf = null;
@@ -45,32 +60,14 @@ public class TetrisFrame extends JFrame {
         super("Tetris Frame");
         try {
             tetrisFrameInit();
-            setSize(2000, 1000);
+            setSize(590, 1000);
+            setResizable(false);
         }
         catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-    /**
-     * This method creates a MenuBar.
-     *
-     * @return MenuBar With game options
-     */
-    public JMenuBar menuBarInit() {
-        JMenuBar mBar = new JMenuBar();
-
-        //mGame menu
-        JMenu mGame = new JMenu("Gra");
-        JMenuItem mGameExit = new JMenuItem("Zakończ");
-        mGame.add(mGameExit);
-        mBar.add(mGame);
-
-        mGameExit.addActionListener(new TetrisFrame_mGameExit_actionAdapter(this));
-
-        return mBar;
-    }
-
+    
     /**
      * This method initializes the tetris tetrisFrame and tetris tetrisFrame desktop pane.
      *
@@ -82,7 +79,7 @@ public class TetrisFrame extends JFrame {
         getContentPane().setBackground(Color.WHITE);
         setSize(new Dimension(900, 700));
         getContentPane().setLayout(new BorderLayout());
-        setJMenuBar(menuBarInit());
+
         setResizable(true);
         setLocation(20, 20);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -93,13 +90,6 @@ public class TetrisFrame extends JFrame {
         pClientServer = new JPanel();
         pClientServer.add(cf.clientServerPanel);
         getContentPane().add(pClientServer, BorderLayout.WEST);
-
-        //initialization of tetris tetrisFrame desktop pane
-        desktopPane = new JDesktopPane();
-        desktopPane.setPreferredSize(new Dimension(1600, 1200));
-        desktopPane.setBackground(Color.WHITE);
-        desktopPane.setVisible(true);
-        getContentPane().add(desktopPane, BorderLayout.CENTER);
 
         validate();
     }

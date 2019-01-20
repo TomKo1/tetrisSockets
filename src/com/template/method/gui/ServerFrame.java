@@ -52,10 +52,9 @@ public class ServerFrame extends JFrame implements Logable {
     public ServerFrame(int port, int number, int playTime, TetrisFrame tetrisFrame) {
 
         this.tetrisFrame = tetrisFrame;
+        this.tetrisFrame.initServerLog();
 
         try {
-            serverFrameInit();
-            panelInit();
             this.port = port;
             this.numberPlayers = number;
             this.playTime = playTime;
@@ -67,48 +66,6 @@ public class ServerFrame extends JFrame implements Logable {
         }
     }
 
-    /**
-     * Initializazion of server tetrisFrame.
-     *
-     * @throws Exception Initialization Exception
-     */
-    public void serverFrameInit() throws Exception {
-
-    }
-
-    /**
-     * Initialization of server tetrisFrame panels
-     *
-     * @throws Exception Initialization Exception
-     */
-    public void panelInit() throws Exception {
-
-        JInternalFrame serverFrame = new JInternalFrame("Tetris Server");
-        serverFrame.getContentPane().setBackground(Color.WHITE);
-        serverFrame.setSize(new Dimension(200, 300));
-        serverFrame.getContentPane().setLayout(new GridLayout(1, 1));
-        serverFrame.setVisible(true);
-        serverFrame.setClosable(true);
-        tetrisFrame.addInternalFrame(serverFrame);
-
-        //initialization of panel
-        JPanel pServerClientTraffic = new JPanel(new GridLayout(1, 1));
-
-        //initialization of text area
-        viewLog = new JTextArea("Server started!" + "\n", 30, 30);
-        viewLog.setEditable(false);
-        //for server commands
-        //viewLog.setEditable(true);
-
-        //add component to internal tetrisFrame
-        pServerClientTraffic.add(new JScrollPane(viewLog));
-
-        //set panels on tetrisFrame
-        serverFrame.getContentPane().add(pServerClientTraffic, BorderLayout.NORTH);
-        serverFrame.setLocation(300, 0);
-
-        serverFrame.pack();
-    }
 
     public void info(String message) {
         logMessage(message);
@@ -124,6 +81,6 @@ public class ServerFrame extends JFrame implements Logable {
      * @param message Strifng message to print on message area
      */
     public void logMessage(String message) {
-        viewLog.append(dateFormat.format(new Date()) + ": " + message + LINE_SEPARATOR);
+        tetrisFrame.printServerLog(dateFormat.format(new Date()) + ": " + message + LINE_SEPARATOR);
     }
 }
