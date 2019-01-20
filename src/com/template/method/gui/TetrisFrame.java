@@ -19,9 +19,6 @@ import javax.swing.*;
 
 public class TetrisFrame extends JFrame {
 
-    //tetris tetrisFrame -> heart of this tetris
-    //public JFrame tetrisFrame = null;
-
     // server log area
     private JTextArea serverLogTextArea = new JTextArea();
 
@@ -67,7 +64,7 @@ public class TetrisFrame extends JFrame {
             e.printStackTrace();
         }
     }
-    
+
     /**
      * This method initializes the tetris tetrisFrame and tetris tetrisFrame desktop pane.
      *
@@ -107,48 +104,5 @@ public class TetrisFrame extends JFrame {
             e.printStackTrace();
         }
         new TetrisFrame();
-    }
-
-    /**
-     * By press mGameExit menu item the system exit
-     *
-     * @param e ActionEvent
-     */
-    void mGameExit_actionPerformed(ActionEvent e) {
-        System.exit(0);
-    }
-
-    class TetrisFrame_mGameExit_actionAdapter implements ActionListener {
-        TetrisFrame adaptee;
-
-        TetrisFrame_mGameExit_actionAdapter(TetrisFrame adaptee) {
-            this.adaptee = adaptee;
-        }
-
-        public void actionPerformed(ActionEvent e) {
-            adaptee.mGameExit_actionPerformed(e);
-        }
-    }
-
-    /**
-     * By press mGameNew menu item client tetrisFrame start
-     *
-     * @param e ActionEvent
-     */
-    void mGameNew_actionPerformed(ActionEvent e) {
-        TetrisFrame tf = new TetrisFrame();
-        //mGameNew.setEnabled(false);
-    }
-
-    class TetrisFrame_mGameNew_actionAdapter implements ActionListener {
-        TetrisFrame adaptee;
-
-        TetrisFrame_mGameNew_actionAdapter(TetrisFrame adaptee) {
-            this.adaptee = adaptee;
-        }
-
-        public void actionPerformed(ActionEvent e) {
-            adaptee.mGameNew_actionPerformed(e);
-        }
     }
 }

@@ -23,7 +23,7 @@ import com.template.method.server.logging.Logable;
  * @version 1.0
  */
 
-public class ServerFrame extends JFrame implements Logable {
+public class ServerFrame implements Logable {
 
     private String LINE_SEPARATOR = System.getProperty("line.separator");
 
