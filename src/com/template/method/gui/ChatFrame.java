@@ -59,9 +59,22 @@ public class ChatFrame extends JFrame {
         add(sendBtn);
     }
 
-
     public void printReceivedMessage(String message) {
         this.jTextArea.append(message);
+    }
+
+
+
+    public JTextArea getjTextArea() {
+        return jTextArea;
+    }
+
+    public JTextField getJTextField() {
+        return inputMessage;
+    }
+
+    public TetrisClient getTetrisClient() {
+        return tetrisClient;
     }
 
 }

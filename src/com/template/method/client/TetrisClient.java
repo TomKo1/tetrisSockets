@@ -102,6 +102,8 @@ public class TetrisClient implements Serializable {
 
     protected ClientFrame clientFrame;
 
+    public TetrisClient() { }
+
     /**
      * Constructor initialize host, IPStatic, port and set running true.
      *
