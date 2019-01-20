@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import javax.swing.*;
 import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -46,7 +47,13 @@ class ClientFrameTest {
 
     @Test
     void setPointsMethodShouldAddPoints() {
-        
+        ClientFrame sut = new ClientFrame(new TetrisFrame());
+
+        sut.setPoints(100);
+        JLabel label = (JLabel)sut.getPointsPanel().getComponent(1);
+
+        assertEquals(100, Integer.parseInt(label.getText()));
+
     }
 
 
