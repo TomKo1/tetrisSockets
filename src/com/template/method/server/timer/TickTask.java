@@ -1,7 +1,7 @@
 package com.template.method.server.timer;
 
 import com.template.method.server.ServerOutput;
-import com.template.method.server.command.impl.Tick;
+import com.template.method.server.command.Tick;
 
 import java.util.List;
 

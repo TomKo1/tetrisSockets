@@ -1,7 +1,6 @@
-package com.template.method.server.command.impl;
+package com.template.method.server.command;
 
 import com.template.method.client.command.StopClient;
-import com.template.method.server.command.Serverable;
 import com.template.method.server.TetrisServer;
 import com.template.method.server.ServerOutput;
 
@@ -18,7 +17,7 @@ import com.template.method.server.ServerOutput;
  * @author Roman R&auml;dle
  * @version $Id: StopGameRequest.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
  */
-public class StopGameRequest implements Serverable {
+public class StopGameRequest implements ServerRequestable {
 
     private String playerName;
 

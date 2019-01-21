@@ -6,7 +6,7 @@ import com.template.method.client.TetrisClient;
 /**
 * Command responsible for setting points on the client side
 */
-public class Points implements Clientable {
+public class Points implements ClientRequestable {
 
     private int points;
 

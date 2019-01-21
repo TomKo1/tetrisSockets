@@ -1,6 +1,6 @@
-package com.template.method.server.command.impl;
+package com.template.method.server.command;
 
-import com.template.method.server.command.Serverable;
+
 import com.template.method.server.TetrisServer;
 
 /**
@@ -15,7 +15,7 @@ import com.template.method.server.TetrisServer;
  * @author Roman R&auml;dle
  * @version $Id: StartGameRequest.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
  */
-public class StartGameRequest implements Serverable {
+public class StartGameRequest implements ServerRequestable {
 
     private String playerName;
 

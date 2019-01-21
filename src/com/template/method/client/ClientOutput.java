@@ -2,7 +2,7 @@ package com.template.method.client;
 
 
 import com.template.method.shared.Commandable;
-import com.template.method.server.command.Serverable;
+import com.template.method.server.command.ServerRequestable;
 
 import java.io.*;
 import java.net.*;
@@ -47,7 +47,7 @@ public class ClientOutput extends Thread {
      * Adds command to list of commands to be sent to
      * the server
      */
-    public void addSendable(Serverable sendable) {
+    public void addSendable(ServerRequestable sendable) {
         this.commandables.add(sendable);
     }
 

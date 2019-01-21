@@ -1,9 +1,11 @@
-package com.template.method.server.command.impl;
+package com.template.method.server.command;
 
 import com.template.method.server.TetrisServer;
-import com.template.method.server.command.Serverable;
 
-public class BroadcastMessage implements Serverable {
+/**
+ * Request for server to broadcast message from chat
+ */
+public class BroadcastMessage implements ServerRequestable {
 
     private String message;
 
@@ -14,9 +16,5 @@ public class BroadcastMessage implements Serverable {
 
     public void execute(TetrisServer tetrisServer) {
         tetrisServer.broadcastToAllPlayers(message);
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 }

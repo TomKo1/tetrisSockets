@@ -1,7 +1,7 @@
 package com.template.method.gui;
 
 import com.template.method.client.TetrisClient;
-import com.template.method.server.command.impl.BroadcastMessage;
+import com.template.method.server.command.BroadcastMessage;
 
 import javax.swing.*;
 import java.awt.*;

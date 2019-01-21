@@ -2,8 +2,8 @@ package com.template.method.server;
 
 import com.template.method.client.command.*;
 import com.template.method.gui.figure.Figure;
-import com.template.method.server.command.impl.StartGameRequest;
-import com.template.method.server.command.impl.StopGameRequest;
+import com.template.method.server.command.StartGameRequest;
+import com.template.method.server.command.StopGameRequest;
 import com.template.method.server.logging.Logable;
 import com.template.method.server.timer.TickTask;
 

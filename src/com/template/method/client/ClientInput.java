@@ -1,10 +1,10 @@
 package com.template.method.client;
 
 
-import com.template.method.client.command.Clientable;
+import com.template.method.client.command.ClientRequestable;
 import com.template.method.server.TetrisServer;
 import com.template.method.server.command.Tickable;
-import com.template.method.server.command.impl.ServerLog;
+import com.template.method.server.command.ServerLog;
 import java.io.*;
 import java.net.*;
 import javax.swing.*;
@@ -50,18 +50,18 @@ public class ClientInput extends Thread {
                     // ticable object is a request for battlefield to be repainted
                     tetrisClient.getBattleField().newRepaint();
                 }
-                else if (o instanceof Clientable) {
+                else if (o instanceof ClientRequestable) {
                     // wait until the previous command was done
                     synchronized (tetrisClient.getClientDummy()) {
                         tetrisClient.getClientDummy().notifyAll();
                     }
 
                     // execute request from server
-                    Clientable clientable = (Clientable) o;
+                    ClientRequestable clientRequestable = (ClientRequestable) o;
 
-                    clientable.execute(tetrisClient);
+                    clientRequestable.execute(tetrisClient);
 
-                    tetrisClient.getOutput().addSendable(new ServerLog(ServerLog.Type.INFO, clientable.getMessageKey()));
+                    tetrisClient.getOutput().addSendable(new ServerLog(ServerLog.Type.INFO, clientRequestable.getMessageKey()));
                 }
             } catch (IOException ioe) {
                 JOptionPane.showMessageDialog(tetrisClient.getBattleField().getContentPane(), "Połączenie z serverem utracone!", "Błąd", JOptionPane.ERROR_MESSAGE);

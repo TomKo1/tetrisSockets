@@ -1,21 +1,12 @@
-package com.template.method.server.command.impl;
+package com.template.method.server.command;
 
-import com.template.method.server.command.Serverable;
+
 import com.template.method.server.TetrisServer;
 
 /**
- * TODO: document me!!!
- * <p/>
- * <code>ClientPoints</code>.
- * <p/>
- * User: rro
- * Date: 23.03.2006
- * Time: 20:27:18
- *
- * @author Roman R&auml;dle
- * @version $Id: ClientPoints.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
+ * Request for server to update points for specific player
  */
-public class ClientPoints implements Serverable {
+public class ClientPoints implements ServerRequestable {
 
     private String clientName;
 

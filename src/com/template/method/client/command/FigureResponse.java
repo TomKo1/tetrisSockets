@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Command responsible for adding new figures to the battlefield
  */
-public class FigureResponse implements Clientable {
+public class FigureResponse implements ClientRequestable {
 
     private List figures;
 

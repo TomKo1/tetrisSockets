@@ -1,6 +1,5 @@
-package com.template.method.server.command.impl;
+package com.template.method.server.command;
 
-import com.template.method.server.command.Tickable;
 
 /**
  * TODO: document me!!!

@@ -9,9 +9,9 @@ import com.template.method.client.TetrisClient;
 import com.template.method.gui.figure.Block;
 import com.template.method.gui.figure.Figure;
 import com.template.method.gui.ClientFrame;
-import com.template.method.server.command.impl.ClientPoints;
-import com.template.method.server.command.impl.FigureRequest;
-import com.template.method.server.command.impl.StopGameRequest;
+import com.template.method.server.command.ClientPoints;
+import com.template.method.server.command.FigureRequest;
+import com.template.method.server.command.StopGameRequest;
 
 
 /**

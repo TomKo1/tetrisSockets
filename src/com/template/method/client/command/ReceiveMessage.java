@@ -5,7 +5,7 @@ import com.template.method.client.TetrisClient;
 /**
  *  Command send by server in order to receive message that was broadcasted across the room
  */
-public class ReceiveMessage implements Clientable {
+public class ReceiveMessage implements ClientRequestable {
 
     private String message;
 

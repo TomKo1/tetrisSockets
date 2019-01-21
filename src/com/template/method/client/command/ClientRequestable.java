@@ -7,7 +7,7 @@ import com.template.method.shared.Commandable;
 /**
  * Interface implemented by all commands responsible for doing sth on the client side
  */
-public interface Clientable extends Commandable {
+public interface ClientRequestable extends Commandable {
      void execute(TetrisClient tetrisClient);
      String getMessageKey();
 }

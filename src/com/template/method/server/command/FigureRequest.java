@@ -1,28 +1,16 @@
-package com.template.method.server.command.impl;
+package com.template.method.server.command;
 
 import com.template.method.client.command.FigureResponse;
 import com.template.method.gui.figure.Figure;
-import com.template.method.server.command.Serverable;
 import com.template.method.server.TetrisServer;
 import com.template.method.server.ServerOutput;
-
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO: document me!!!
- * <p/>
- * <code>FigureRequest</code>.
- * <p/>
- * User: rro
- * Date: 23.03.2006
- * Time: 20:11:24
- *
- * @author Roman R&auml;dle
- * @version $Id: FigureRequest.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
+ * Request send when client wants new figure.
  */
-public class FigureRequest implements Serverable {
+public class FigureRequest implements ServerRequestable {
 
     private String playerName;
 

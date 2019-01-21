@@ -6,7 +6,7 @@ import com.template.method.client.TetrisClient;
  * Command responsible for setting the client id
  * on the client side - send by server
  */
-public class ClientId implements Clientable {
+public class ClientId implements ClientRequestable {
 
     private int id;
 

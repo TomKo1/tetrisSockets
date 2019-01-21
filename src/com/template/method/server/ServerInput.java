@@ -1,7 +1,6 @@
 package com.template.method.server;
 
-import com.template.method.server.command.Serverable;
-import com.template.method.server.command.impl.BroadcastMessage;
+import com.template.method.server.command.ServerRequestable;
 
 import java.io.*;
 import java.net.*;
@@ -68,8 +67,8 @@ public class ServerInput extends Thread {
                 Object o = inputStream.readObject();
                 System.out.println(o);
 
-                if (o instanceof Serverable) {
-                    ((Serverable) o).execute(tetrisServer);
+                if (o instanceof ServerRequestable) {
+                    ((ServerRequestable) o).execute(tetrisServer);
                 }
             }
             catch (IOException | ClassNotFoundException ioe) {

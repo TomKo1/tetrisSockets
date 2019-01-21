@@ -1,22 +1,14 @@
-package com.template.method.server.command.impl;
+package com.template.method.server.command;
 
-import com.template.method.server.command.Serverable;
+
 import com.template.method.server.TetrisServer;
 import com.template.method.server.logging.Logable;
 
 /**
- * TODO: document me!!!
- * <p/>
- * <code>ServerLog</code>.
- * <p/>
- * User: rro
- * Date: 23.03.2006
- * Time: 20:29:47
- *
- * @author Roman R&auml;dle
- * @version $Id: ServerLog.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
+ * Request for server to log message on its console
+ * based on enum type inside this object. (INFO/ERROR)
  */
-public class ServerLog implements Serverable {
+public class ServerLog implements ServerRequestable {
 
     public enum Type {INFO, ERROR}
 

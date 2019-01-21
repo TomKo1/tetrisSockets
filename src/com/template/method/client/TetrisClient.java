@@ -3,7 +3,7 @@ package com.template.method.client;
 import com.template.method.gui.ChatFrame;
 import com.template.method.gui.ClientFrame;
 import com.template.method.gui.battlefield.BattleField;
-import com.template.method.server.command.impl.StartGameRequest;
+import com.template.method.server.command.StartGameRequest;
 import java.awt.*;
 import java.io.*;
 import java.net.*;
