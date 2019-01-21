@@ -2,16 +2,7 @@ package com.template.method.server.command;
 
 
 /**
- * TODO: document me!!!
- * <p/>
- * <code>Tick</code>.
- * <p/>
- * User: rro
- * Date: 23.03.2006
- * Time: 19:26:22
- *
- * @author Roman R&auml;dle
- * @version $Id: Tick.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
+ * Class marking need to repaint of a battlefield
  */
 public class Tick implements Tickable {
 }

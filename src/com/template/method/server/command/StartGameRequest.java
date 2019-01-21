@@ -4,16 +4,7 @@ package com.template.method.server.command;
 import com.template.method.server.TetrisServer;
 
 /**
- * TODO: document me!!!
- * <p/>
- * <code>StartGameRequest</code>.
- * <p/>
- * User: rro
- * Date: 23.03.2006
- * Time: 20:23:23
- *
- * @author Roman R&auml;dle
- * @version $Id: StartGameRequest.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
+ * Request for server to start whole game
  */
 public class StartGameRequest implements ServerRequestable {
 

@@ -47,12 +47,12 @@ public class Figure extends JComponent implements Serializable {
 
 
     /**
-     * Initializes the tetris figure with size and start position on the tetris battle field.
+     * Initializes the tetris figure with size and start position on the battle field.
      *
-     * @param startX int x start position of tetris figure on the tetris battle field
-     * @param startY int y start position of tetris figure on the tetris battle field
-     * @param width  int Width of each tetris block
-     * @param height int Height of each tetris block
+     * @param startX int x start position of figure on the tetris battle field
+     * @param startY int y start position of figure on the tetris battle field
+     * @param width  int Width of each  block
+     * @param height int Height of each  block
      */
     public Figure(int startX, int startY, int width, int height) {
         this.startX = startX;

@@ -2,7 +2,6 @@ package com.template.method.server.command;
 
 
 import com.template.method.server.TetrisServer;
-import com.template.method.server.logging.Logable;
 
 /**
  * Request for server to log message on its console

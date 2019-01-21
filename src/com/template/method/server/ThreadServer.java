@@ -1,7 +1,7 @@
 package com.template.method.server;
 
 
-import com.template.method.server.logging.Logable;
+import com.template.method.server.command.Logable;
 
 /**
  * <p>Headline: tetris.server.ThreadServer</p>

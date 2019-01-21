@@ -5,7 +5,7 @@ import java.util.*;
 import java.text.DateFormat;
 import com.template.method.server.TetrisServer;
 import com.template.method.server.ThreadServer;
-import com.template.method.server.logging.Logable;
+import com.template.method.server.command.Logable;
 
 
 /**

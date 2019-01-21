@@ -6,16 +6,7 @@ import com.template.method.server.ServerOutput;
 
 
 /**
- * TODO: document me!!!
- * <p/>
- * <code>StopGameRequest</code>.
- * <p/>
- * User: rro
- * Date: 23.03.2006
- * Time: 20:23:51
- *
- * @author Roman R&auml;dle
- * @version $Id: StopGameRequest.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
+ * The request for server to gently close connection and end the whole game
  */
 public class StopGameRequest implements ServerRequestable {
 
