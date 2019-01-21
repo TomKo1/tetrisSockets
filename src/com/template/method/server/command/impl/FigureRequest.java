@@ -1,6 +1,6 @@
 package com.template.method.server.command.impl;
 
-import com.template.method.client.command.impl.FigureResponse;
+import com.template.method.client.command.FigureResponse;
 import com.template.method.gui.figure.Figure;
 import com.template.method.server.command.Serverable;
 import com.template.method.server.TetrisServer;

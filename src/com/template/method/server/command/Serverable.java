@@ -1,6 +1,6 @@
 package com.template.method.server.command;
 
-import com.template.method.command.Sendable;
+import com.template.method.shared.Commandable;
 import com.template.method.server.TetrisServer;
 
 
@@ -16,6 +16,6 @@ import com.template.method.server.TetrisServer;
  * @author Roman R&auml;dle
  * @version $Id: Serverable.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
  */
-public interface Serverable extends Sendable {
+public interface Serverable extends Commandable {
     public void execute(TetrisServer tetrisServer);
 }

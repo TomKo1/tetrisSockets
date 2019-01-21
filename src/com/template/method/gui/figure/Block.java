@@ -4,31 +4,18 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * <p>Headline: GUI.Block</p>
- * <p>Description: This class creates a Tetris block.</p>
- * <p>Copyright: Copyright (c) 2004</p>
- * <p>Organisation: Tetris Connection</p>
- * @author Gath Sebastian, gath, gath@inf.uni-konstanz.de, 01/556108
- * @author Hug Holger, hug, hug@inf.uni-konstanz.de, 01/566368
- * @author Raedle Roman, raedler, raedler@inf.uni-konstanz.de, 01/546759
- * @author Weiler Andreas, weiler, weiler@inf.uni-konstanz.de, 01/560182
- * @version 1.0
+ * Class representing single  block in whole figure
  */
-
 public class Block extends JComponent {
 
-  //width of the tetris block
+  //width of the block
   protected int blockWidth = 20;
-
-  //height of the teris block
+  //height of the block
   protected int blockHeight = 20;
-
-  //x-coordinate of the tetris block
+  //x-coordinate of the block
   protected int blockX = 0;
-
-  //y-coordinate of the tetris block
+  //y-coordinate of the block
   protected int blockY = 0;
-
   //color of the tetris block
   protected Color color = Color.RED;
 
@@ -40,13 +27,8 @@ public class Block extends JComponent {
   }
 
   /**
-   * Initialization of the tetris block with width, height and color.
+   * Initializes of the block with width, height and color
    *
-   * @param width int Width of the tetris block
-   * @param height int Heigth of the tetris block
-   * @param x x-coordinate of the tetris block
-   * @param y y-coordinate of the tetris block
-   * @param color Color Color of the tetris block
    */
   public Block(int width, int height, int x, int y, Color color) {
     this.blockWidth = width;
@@ -59,9 +41,7 @@ public class Block extends JComponent {
   }
 
   /**
-   * Draw a filled rectangle as tetris block and a draw rectangle as
-   *
-   * @param g Graphics Graphics object -> tetris block
+   * Paints the component
    */
   public void paintComponent(Graphics g) {
     g.setColor(color);

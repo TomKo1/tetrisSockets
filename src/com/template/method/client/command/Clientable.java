@@ -1,7 +1,7 @@
 package com.template.method.client.command;
 
 import com.template.method.client.TetrisClient;
-import com.template.method.command.Sendable;
+import com.template.method.shared.Commandable;
 
 
 /**
@@ -16,7 +16,7 @@ import com.template.method.command.Sendable;
  * @author Roman R&auml;dle
  * @version $Id: Clientable.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
  */
-public interface Clientable extends Sendable {
+public interface Clientable extends Commandable {
     public void execute(TetrisClient tetrisClient);
     public String getMessageKey();
 }

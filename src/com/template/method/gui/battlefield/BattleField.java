@@ -13,71 +13,30 @@ import com.template.method.server.command.impl.ClientPoints;
 import com.template.method.server.command.impl.FigureRequest;
 import com.template.method.server.command.impl.StopGameRequest;
 
-/**
- * <p>Headline: BattleField</p>
- * <p>Description: This class implements the tetris battle field.</p>
- * <p>Copyright: Copyright (c) 2004</p>
- * <p>Organisation: Tetris Connection</p>
- *
- * @author Gath Sebastian, gath, gath@inf.uni-konstanz.de, 01/556108
- * @author Hug Holger, hug, hug@inf.uni-konstanz.de, 01/566368
- * @author Raedle Roman, raedler, raedler@inf.uni-konstanz.de, 01/546759
- * @author Weiler Andreas, weiler, weiler@inf.uni-konstanz.de, 01/560182
- * @version 1.0
- */
 
-// JInternalFrame
+/**
+ * Class representing battle field (tetris game) frame
+ */
 public class BattleField extends JFrame {
 
-    //figure list with tetris figures
-    protected List<Figure> figures = null;
+    //figure list
+    protected List<Figure> figures;
+    protected String playerName;
 
-    //tetris tetrisFrame desktop pane
-    //protected JDesktopPane desktopPane = null;
-
-    //tetris tetrisFrame
-    //protected TetrisFrame tetrisFrame;
-
-    //battle field internal tetrisFrame
-    //protected JInternalFrame battleFieldIntFrame = null;
-
-    //tetris client/server buttons
-    protected JButton multiButton = null;
-    protected JButton singleButton = null;
-    protected JButton startServerButton = null;
-
-    //client name
-    protected String playerName = null;
-
-    //two-dimensional block array
-    protected Block[][] blocksOnBattleField = null;
-
+    //array describing occupied blocks on the battllefield
+    protected Block[][] blocksOnBattleField;
     protected TetrisClient tetrisClient;
-
-    //client dummy to write on thread client outputStream
+    // object to lock the thread
     protected final Object clientDummy;
+    // first figure on the list
+    public Figure firstFigure;
+    // for each new figure
+    public boolean firstTime;
+    protected BattleFieldRect battlefieldBackground;
+    protected ClientFrame clientFrame ;
 
-    //first figure of tetris figure list
-    public Figure firstFigure = null;
-
-    //used for each new figure
-    public boolean firstTime = true;
-
-    //tetris battle field background
-    protected BattleFieldRect bfr = null;
-
-    //tetris client tetrisFrame
-    protected ClientFrame clientFrame = null;
-
-    public boolean gameOver = false;
-
-    /**
-     * Constructor initialize the battle field with tetris clients output stream
-     *
-     * @param tetrisClient
-     */
     public BattleField(TetrisClient tetrisClient, ClientFrame clientFrame) {
-        super("Battle Field");
+        super("Tetris game");
 
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
@@ -91,27 +50,24 @@ public class BattleField extends JFrame {
         setFocusable(true);
         requestFocus();
 
-        bfr = new BattleFieldRect();
-        add(bfr);
+        battlefieldBackground = new BattleFieldRect();
+        add(battlefieldBackground);
         this.clientFrame = clientFrame;
 
-        figures = new ArrayList<Figure>();
+        figures = new ArrayList<>();
         blocksOnBattleField = new Block[13][31];
 
         this.tetrisClient = tetrisClient;
         this.clientDummy = tetrisClient.getClientDummy();
         this.playerName = tetrisClient.getPlayerName();
 
-        //this.desktopPane.add(battleFieldIntFrame);
         firstTime = true;
     }
 
     /**
-     * Paint complete battleField new; each time a tick is recommended in threadClientIn;
-     * move current figure down or save it up in blocksOnBattlefield and take next figure
-     * outputStream of figure List; in this case set points
+     * Repaints complete BattleField every time a tick is recognized in client input
+     * it moves current figure down or save it in 'occupied' array and takes next figure
      */
-
     public void newRepaint() {
         //first time figure shown on battleField
         if (firstTime) {
@@ -175,7 +131,6 @@ public class BattleField extends JFrame {
 
             firstFigure.removeBlocks();
             remove(firstFigure);
-            System.out.println("set points command object");
 
             //send set points of client command
             clientFrame.setPoints(10);
@@ -186,7 +141,7 @@ public class BattleField extends JFrame {
             }
 
             // delete complete lines and set points
-            lineManager();
+            checkCompletness();
 
             if (blocksOnBattleField != null) {
                 paintBlocksOnBattleField();
@@ -195,39 +150,27 @@ public class BattleField extends JFrame {
     }
 
     /**
-     * Add new linked list filled with tetris figures to this figure list.
+     * Adds new list with figures
      *
-     * @param list LinkedList Filled with tetris figures
      */
     public void addNewFigureList(List<Figure> list) {
         this.figures.addAll(list);
     }
 
-    /**
-     * Returns current tetris figure.
-     *
-     * @return Figure Tetris figure
-     */
-    public Figure getCurrentFigure() {
-        return this.firstFigure;
-    }
 
     /**
-     * Check if the parameter figure is allowed for move down.
+     * Check if figure can move down
      *
-     * @param figure Figure Current tetris figure
-     * @return boolean Return true if tetris figure is allowed for move down else false
+     * @param figure current figure
      */
     public boolean ckeckShiftDown(Figure figure) {
         int x = figure.getX();
         int y = figure.getY();
 
-        //check bounds
         if (y + figure.getHighestY() < 420) {
             if (y + figure.getHighestY() < 0) {
                 return true;
             }
-            //check bocksOnBattleField for free entries in next line, return true
             if ((blocksOnBattleField[(x + figure.getBlockOne().getX()) / 20][(y + figure.getBlockOne().getY() + 20) / 20] == null) &&
                     (blocksOnBattleField[(x + figure.getBlockTwo().getX()) / 20][(y + figure.getBlockTwo().getY() + 20) / 20] == null) &&
                     (blocksOnBattleField[(x + figure.getBlockThree().getX()) / 20][(y + figure.getBlockThree().getY() + 20) / 20] == null) &&
@@ -243,62 +186,63 @@ public class BattleField extends JFrame {
         }
     }
 
-    /**
-     * looking for complete lines on battleField, deleting them; move upper lines down; points
-     */
-
-//    public void lineManager() {
-//        // mamy 20 rzedow
-//        boolean[] filled = new boolean[29];
+//    /**
+//     * looking for complete lines on battleField, deleting them; move upper lines down; points
+//     */
 //
-//        int row = 0;
-//        // sprawdzamy od gory
-//        for (int i = this.blocksOnBattleField[0].length - 1; i > 1; i--) {
-//            System.out.println("Iteracja: " + row);
-//            // od lewej do prawej
-//            for (int j = 1; j < this.blocksOnBattleField.length; j++) {
-//                // jezeli ktorykolwiek z blokow jest rowny null to nie jest zapelniona
-//                // linia
-//                if(blocksOnBattleField[j][i] == null){
-//                    break;
-//                }
+////    public void checkCompletness() {
+////        // mamy 20 rzedow
+////        boolean[] filled = new boolean[29];
 ////
-//                if(j == this.blocksOnBattleField.length -1) {
-//                    filled[row] = true;
-//                }
+////        int row = 0;
+////        // sprawdzamy od gory
+////        for (int i = this.blocksOnBattleField[0].length - 1; i > 1; i--) {
+////            System.out.println("Iteracja: " + row);
+////            // od lewej do prawej
+////            for (int j = 1; j < this.blocksOnBattleField.length; j++) {
+////                // jezeli ktorykolwiek z blokow jest rowny null to nie jest zapelniona
+////                // linia
+////                if(blocksOnBattleField[j][i] == null){
+////                    break;
+////                }
+//////
+////                if(j == this.blocksOnBattleField.length -1) {
+////                    filled[row] = true;
+////                }
+////
+////            }
+////            row++;
+////        }
+////        System.out.println("Wykryte pelne rzedy: ");
+//////
+////        for(int i = 0 ; i < 29 ; i++) {
+////            if(filled[i]) System.out.println("Rzad: " +  i);
+////        }
+////
+////    }
 //
+//    private void printOccupiedCelsArray() {
+//
+//        for(int i = 0 ; i < 13 ; i++) {
+//            for(int j = 0 ; j < 31 ; j++) {
+//                String text = blocksOnBattleField[i][j] != null ? "|" : "O";
+//                System.out.print(text);
 //            }
-//            row++;
+//            System.out.println();
 //        }
-//        System.out.println("Wykryte pelne rzedy: ");
-////
-//        for(int i = 0 ; i < 29 ; i++) {
-//            if(filled[i]) System.out.println("Rzad: " +  i);
-//        }
-//
 //    }
 
-    private void printOccupiedCelsArray() {
-
-        for(int i = 0 ; i < 13 ; i++) {
-            for(int j = 0 ; j < 31 ; j++) {
-                String text = blocksOnBattleField[i][j] != null ? "|" : "O";
-                System.out.print(text);
-            }
-            System.out.println();
-        }
-    }
-
 
     /**
-     * looking for complete lines on battleField, deleting them; move upper lines down; points
+     * Looks for complete lines on battleField, deleting them; move upper lines down; points
      */
-    public void lineManager() {
+    public void checkCompletness() {
         boolean filled = true;
         boolean moveDown = false;
+        // number of completed lines
         int count = 0;
 
-        // looking for complete lines; check each cell equals null
+        // determines which lines are occupied
         for (int i = this.blocksOnBattleField[0].length - 1; i > 1; i--) {
             for (int j = 1; j < this.blocksOnBattleField.length; j++) {
                 if (this.blocksOnBattleField[j][i] == null) {
@@ -306,12 +250,10 @@ public class BattleField extends JFrame {
                     j = this.blocksOnBattleField.length;
                 }
             }
-            //found complete line(s) to delete
             if (filled) {
                 moveDown = true;
-                //set flag (dummyblock) in colum0 for as identifier
+                // dummy block as 'marker'
                 this.blocksOnBattleField[0][i] = new Block();
-                //count complete lines
                 count++;
             }
             filled = true;
@@ -345,7 +287,7 @@ public class BattleField extends JFrame {
 
             //clear intFrame
             removeAll();
-            add(bfr);
+            add(battlefieldBackground);
             paintBlocksOnBattleField();
             //send set points of client command
             this.clientFrame.setPoints(100);
@@ -359,11 +301,10 @@ public class BattleField extends JFrame {
 
 
     /**
-     * Check if the parameter figure is allowed for shift left.
+     * Checks if figure can move to left
      *
-     * @param figure Figure Current tetris figure on battle field
-     * @return boolean Return true if figure is allowed for shift left else false
      */
+
     public boolean ckeckShiftLeft(Figure figure) {
         int x = figure.getX();
         int y = figure.getY();
@@ -379,10 +320,7 @@ public class BattleField extends JFrame {
     }
 
     /**
-     * Check if the parameter figure is allowed for shift right.
-     *
-     * @param figure Figure Current tetris figure on battle field
-     * @return boolean Return true if figure is allowed for shift right else false
+     * Checks if figure can move to right
      */
     public boolean checkShiftRight(Figure figure) {
         int x = figure.getX();
@@ -399,17 +337,13 @@ public class BattleField extends JFrame {
     }
 
     /**
-     * check rotation bounds for each figure and postion:
-     * uses preRotate: simulate rotation and check new bounds in bounds of battlefield
-     *
-     * @param figure Figure
-     * @return boolean
+     * Checks if figure is allowed to be rotated
      */
     public boolean checkRotate(Figure figure) {
         int leftBorder = 0;
         int rightBorder = 260;
 
-        //Figure one
+        // first figure
         if (figure.getColor().equals(Color.RED) && figure.getFigurePosition() == 0) {
             if (figure.preRotate(figure.getColor())[0] > leftBorder &&
                     figure.preRotate(figure.getColor())[1] < rightBorder) {
@@ -428,7 +362,7 @@ public class BattleField extends JFrame {
                 return false;
             }
         }
-        //Figure two
+        //second figure
         else if (figure.getColor().equals(Color.GREEN) && figure.getFigurePosition() == 0) {
             if (figure.preRotate(figure.getColor())[0] > leftBorder &&
                     figure.preRotate(figure.getColor())[1] < rightBorder) {
@@ -465,7 +399,7 @@ public class BattleField extends JFrame {
                 return false;
             }
         }
-        //Figure three
+        //third figure
         else if (figure.getColor().equals(Color.ORANGE) && figure.getFigurePosition() == 0) {
             if (figure.preRotate(figure.getColor())[0] > leftBorder &&
                     figure.preRotate(figure.getColor())[1] < rightBorder) {
@@ -502,7 +436,7 @@ public class BattleField extends JFrame {
                 return false;
             }
         }
-        //Figure four
+        //fourth figure
         else if (figure.getColor().equals(Color.BLUE) && figure.getFigurePosition() == 0) {
             if (figure.preRotate(figure.getColor())[0] > leftBorder &&
                     figure.preRotate(figure.getColor())[1] < rightBorder) {
@@ -539,7 +473,7 @@ public class BattleField extends JFrame {
                 return false;
             }
         }
-        //Figure six
+        //sixth figure
         else if (figure.getColor().equals(Color.PINK) && figure.getFigurePosition() == 0) {
             if (figure.preRotate(figure.getColor())[0] > leftBorder &&
                     figure.preRotate(figure.getColor())[1] < rightBorder) {
@@ -558,7 +492,7 @@ public class BattleField extends JFrame {
                 return false;
             }
         }
-        //Figure seven
+        //seventh figure
         else if (figure.getColor().equals(Color.DARK_GRAY) && figure.getFigurePosition() == 0) {
             if (figure.preRotate(figure.getColor())[0] > leftBorder &&
                     figure.preRotate(figure.getColor())[1] < rightBorder) {
@@ -582,43 +516,7 @@ public class BattleField extends JFrame {
 
 
     /**
-     * paint each block found in array blocksOnBattleField and paint it on battlefield
-     */
-    public void paintBlocksOnBattleField() {
-
-        boolean foundBlock = false;
-
-        for (int i = 0; i < this.blocksOnBattleField.length; i++) {
-            for (int j = 0; j < this.blocksOnBattleField[i].length; j++) {
-                if (this.blocksOnBattleField[i][j] != null) {
-                    //System.outputStream.println("Block bei " + i*20 + " " + j*20 + " gefunden!");
-                    this.blocksOnBattleField[i][j].setLocation(i * 20, j * 20);
-                    this.blocksOnBattleField[i][j].setVisible(true);
-                    add(this.blocksOnBattleField[i][j]);
-                    foundBlock = true;
-                }
-            }
-            if (foundBlock) {
-                foundBlock = false;
-            }
-        }
-    }
-
-    /**
-     * show clientuser messagebox with final points, he made
-     *
-     * @param points int
-     */
-    public void showFinalPoints(int points) {
-        JOptionPane.showMessageDialog(this, "Zdobyłeś: " + points + " punktów.", "Koniec gry", JOptionPane.INFORMATION_MESSAGE);
-    }
-
-    /**
-     * check rotation for each figure and postion:
-     *    use checkRotateLeft for checking bounds of rotated figure
-     *    calculate new safeingpoints in array after rotation and check == null
-     * @param figure Figure
-     * @return boolean
+     * Check the left rotation of figure
      */
     public boolean checkRotateLeft(Figure figure) {
         int x = figure.getX();
@@ -735,5 +633,38 @@ public class BattleField extends JFrame {
             }
         }
         return false;
-  }
+    }
+
+
+    /**
+     * Paints each nonnull block in array on the battlefield
+     */
+    public void paintBlocksOnBattleField() {
+
+        boolean foundBlock = false;
+
+        for (int i = 0; i < this.blocksOnBattleField.length; i++) {
+            for (int j = 0; j < this.blocksOnBattleField[i].length; j++) {
+                if (this.blocksOnBattleField[i][j] != null) {
+                    //System.outputStream.println("Block bei " + i*20 + " " + j*20 + " gefunden!");
+                    this.blocksOnBattleField[i][j].setLocation(i * 20, j * 20);
+                    this.blocksOnBattleField[i][j].setVisible(true);
+                    add(this.blocksOnBattleField[i][j]);
+                    foundBlock = true;
+                }
+            }
+            if (foundBlock) {
+                foundBlock = false;
+            }
+        }
+    }
+
+    /**
+     *  Show client their final score
+     */
+    public void showFinalPointDialog(int points) {
+        JOptionPane.showMessageDialog(this, "Zdobyłeś: " + points + " punktów.", "Koniec gry", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+
 }

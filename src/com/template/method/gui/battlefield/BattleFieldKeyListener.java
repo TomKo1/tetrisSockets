@@ -3,40 +3,26 @@ package com.template.method.gui.battlefield;
 
 import java.awt.event.*;
 
-/**
- * <p>Headline: GUI.BattleFieldKeyListener</p>
- * <p>Description: This class implements the tetris battle field key listener.</p>
- * <p>Copyright: Copyright (c) 2004</p>
- * <p>Organisation: Tetris Connection</p>
- * @author Gath Sebastian, gath, gath@inf.uni-konstanz.de, 01/556108
- * @author Hug Holger, hug, hug@inf.uni-konstanz.de, 01/566368
- * @author Raedle Roman, raedler, raedler@inf.uni-konstanz.de, 01/546759
- * @author Weiler Andreas, weiler, weiler@inf.uni-konstanz.de, 01/560182
- * @version 1.0
- */
 
+/**
+ * Encapsulates the button press handling
+ */
 public class BattleFieldKeyListener extends KeyAdapter {
 
   //tetris battle field
   protected BattleField battleField = null;
 
   /**
-   * Initialize the battle field key listener with tetris battle field.
-   *
-   * @param bf BattleField Tetris battle field
+   * Initializes the battle field key listener with tetris battle field.
    */
   public BattleFieldKeyListener(BattleField bf) {
     this.battleField = bf;
   }
 
   /**
-   * Implements the key pressed action.
-   *
-   * @param evt KeyEvent Pressed key
+   * Handles the key pressing
    */
   public void keyPressed(KeyEvent evt) {
-
-    //code of the pressed key
     int keyCode = evt.getKeyCode();
 
     if (this.battleField.firstFigure != null) {
@@ -72,9 +58,6 @@ public class BattleFieldKeyListener extends KeyAdapter {
           break;
         }
       }
-    }
-    else {
-      System.out.println("BattleFieldKeyListener: There is no figure to move!");
     }
   }
 }

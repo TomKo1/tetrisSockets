@@ -1,6 +1,6 @@
 package com.template.method.server.command.impl;
 
-import com.template.method.client.command.impl.StopClient;
+import com.template.method.client.command.StopClient;
 import com.template.method.server.command.Serverable;
 import com.template.method.server.TetrisServer;
 import com.template.method.server.ServerOutput;

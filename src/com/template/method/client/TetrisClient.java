@@ -216,6 +216,6 @@ public class TetrisClient implements Serializable {
      * @param clientPoints int Final tetris client points
      */
     public void setFinalPoints(int clientPoints) {
-        this.battleField.showFinalPoints(clientPoints);
+        this.battleField.showFinalPointDialog(clientPoints);
     }
 }

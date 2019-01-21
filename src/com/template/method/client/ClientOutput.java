@@ -1,9 +1,8 @@
 package com.template.method.client;
 
 
-import com.template.method.command.Sendable;
+import com.template.method.shared.Commandable;
 import com.template.method.server.command.Serverable;
-import com.template.method.server.command.impl.BroadcastMessage;
 
 import java.io.*;
 import java.net.*;
@@ -30,7 +29,7 @@ public class ClientOutput extends Thread {
     private ObjectOutputStream outputStream;
 
     //command list
-    private List<Sendable> sendables;
+    private List<Commandable> commandables;
 
     /**
      * Add command object to command list.
@@ -38,7 +37,7 @@ public class ClientOutput extends Thread {
      * @param sendable SimpleCommandObject Tetris command object
      */
     public void addSendable(Serverable sendable) {
-        this.sendables.add(sendable);
+        this.commandables.add(sendable);
     }
 
     //tetris client dummy
@@ -88,7 +87,7 @@ public class ClientOutput extends Thread {
         this.clientDummy = clientDummy;
         this.clientName = clientName;
 
-        sendables = new ArrayList<Sendable>();
+        commandables = new ArrayList<Commandable>();
 
         try {
             outputStream = new ObjectOutputStream(socket.getOutputStream());
@@ -113,13 +112,13 @@ public class ClientOutput extends Thread {
             catch (InterruptedException ie) {
                 ie.printStackTrace();
             }
-            while (!sendables.isEmpty()) {
+            while (!commandables.isEmpty()) {
 
-                Sendable sendable = sendables.remove(0);
-                System.out.println(sendable);
+                Commandable commandable = commandables.remove(0);
+                System.out.println(commandable);
 
                 try {
-                    outputStream.writeObject(sendable);
+                    outputStream.writeObject(commandable);
                     outputStream.flush();
                 }
                 catch (IOException ioe) {

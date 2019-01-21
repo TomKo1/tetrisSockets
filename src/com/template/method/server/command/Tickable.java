@@ -1,6 +1,6 @@
 package com.template.method.server.command;
 
-import com.template.method.command.Sendable;
+import com.template.method.shared.Commandable;
 
 
 /**
@@ -15,5 +15,5 @@ import com.template.method.command.Sendable;
  * @author Roman R&auml;dle
  * @version $Id: Tickable.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
  */
-public interface Tickable extends Sendable {
+public interface Tickable extends Commandable {
 }

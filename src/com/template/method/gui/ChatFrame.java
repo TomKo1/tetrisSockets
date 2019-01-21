@@ -4,11 +4,12 @@ import com.template.method.client.TetrisClient;
 import com.template.method.server.command.impl.BroadcastMessage;
 
 import javax.swing.*;
-import javax.swing.border.EtchedBorder;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 
+/**
+ *  JFrame for GUI interaction with chat over Socket
+ */
 public class ChatFrame extends JFrame {
 
     private JTextArea jTextArea;

@@ -1,4 +1,4 @@
-package com.template.method.client.command.impl;
+package com.template.method.client.command;
 
 import com.template.method.client.TetrisClient;
 import com.template.method.client.command.Clientable;

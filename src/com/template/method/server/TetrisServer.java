@@ -1,7 +1,6 @@
 package com.template.method.server;
 
-import com.template.method.client.command.impl.*;
-import com.template.method.command.Sendable;
+import com.template.method.client.command.*;
 import com.template.method.gui.figure.Figure;
 import com.template.method.server.command.impl.StartGameRequest;
 import com.template.method.server.command.impl.StopGameRequest;

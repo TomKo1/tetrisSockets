@@ -9,67 +9,29 @@ import java.awt.event.*;
 import javax.swing.*;
 
 /**
- * TODO: document me!!!
- *
- * <p>Headline: GUI.ClientFrame</p>
- * <p>Description: This class implements a Tetris Client GUI.</p>
- * <p>Copyright: Copyright (c) 2004</p>
- * <p>Organisation: Tetris Connection</p>
- *
- * @author Gath Sebastian, gath, gath@inf.uni-konstanz.de, 01/556108
- * @author Hug Holger, hug, hug@inf.uni-konstanz.de, 01/566368
- * @author Raedle Roman, raedler, raedler@inf.uni-konstanz.de, 01/546759
- * @author Weiler Andreas, weiler, weiler@inf.uni-konstanz.de, 01/560182
- * @version $Id: ClientFrame.java,v 1.1.1.1 2006/03/23 23:35:49 raedler Exp $
+ *  Class representing client part of main window
  */
-
 public class ClientFrame extends JFrame {
 
-    //tetris tetrisFrame
-    public TetrisFrame tetrisFrame = null;
-
-    //client server panel -> left
-    public JPanel clientServerPanel = null;
-
-    //client panel in client server panel
+    private TetrisFrame tetrisFrame;
+    private JPanel clientServerPanel = null;
     private JPanel clientPanel = null;
-
-    //server panel in client server panel
     private JPanel serverPanel = null;
-
-    //figure panel in client server panel
     private JPanel figurePanel = null;
-
-    //points panel in client panel
-    public JPanel pointsPanel = null;
-
+    private JPanel pointsPanel = null;
     private JButton defaultStartServerBtn;
-
     private JButton startServerBtn;
-
-
-    //mutliplayer button
     private JButton joinGameBtn = null;
-
-    // flag checking if server is already running
     private boolean isServerRunning = false;
-
-    //text field for input name, ip, port, serverPort, absence player, playtime
     private JTextField clientName = null;
     private JTextField host = null;
     private JTextField port = null;
     private JTextField tfServerPort = null;
     private JTextField tfAbsencePlayer = null;
     private JTextField tfPlayTime = null;
-
-    //points of tetris client
-    protected int clientPoints = 0;
-
-    //tetris points label
-    protected JLabel lPoints = null;
-
-    //used for nextFigureForInfoPanel -> the last visible figure
-    protected Figure lastFigure = null;
+    private int clientPoints = 0;
+    private JLabel lPoints = null;
+    private Figure lastFigure = null;
 
 
     private ActionListener hostAction = e -> {
@@ -403,5 +365,9 @@ public class ClientFrame extends JFrame {
 
     public Figure getLastFigure() {
         return lastFigure;
+    }
+
+    public JPanel clientServerPanel() {
+        return clientServerPanel;
     }
 }

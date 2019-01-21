@@ -1,51 +1,35 @@
 package com.template.method.gui;
 
-import java.awt.*;
+
 import java.util.*;
 import java.text.DateFormat;
-import javax.swing.*;
-
 import com.template.method.server.TetrisServer;
 import com.template.method.server.ThreadServer;
 import com.template.method.server.logging.Logable;
 
 
 /**
- * <p>Headline: GUI.ServerFrame</p>
- * <p>Description: This class implements a Tetris Server GUI.</p>
- * <p>Copyright: Copyright (c) 2004</p>
- * <p>Organisation: Tetris Connection</p>
- *
- * @author Gath Sebastian, gath, gath@inf.uni-konstanz.de, 01/556108
- * @author Hug Holger, hug, hug@inf.uni-konstanz.de, 01/566368
- * @author Raedle Roman, raedler, raedler@inf.uni-konstanz.de, 01/546759
- * @author Weiler Andreas, weiler, weiler@inf.uni-konstanz.de, 01/560182
- * @version 1.0
+ * This class represents the server part of general window
  */
-
 public class ServerFrame implements Logable {
 
+    // get system  line separator
     private String LINE_SEPARATOR = System.getProperty("line.separator");
-
     private TetrisFrame tetrisFrame;
-
-    //server port
     protected int port = 8181;
-
-    //number of tetris player used for tetris server
     protected int numberPlayers = 1;
-
-    //play time
     protected int playTime = 100000;
-
-    //tetris server
     public TetrisServer tetrisServer = null;
-
     private DateFormat dateFormat = DateFormat.getDateTimeInstance();
 
 
     /**
-     * Initialization of tetris server tetrisFrame with port, numberOfPlayers of players, play time and tetris tetrisFrame window.
+     * Initializes itself and starts Server theread with given port, numberOfPlayers, playTime and log window
+     *
+     * @param port port for ThreadServer
+     * @param numberOfPlayers number of players in the game
+     * @param playTime speed of blocks
+     * @param tetrisFrame the game window
      */
     public ServerFrame(int port, int numberOfPlayers, int playTime, TetrisFrame tetrisFrame) {
 
@@ -65,18 +49,32 @@ public class ServerFrame implements Logable {
     }
 
 
+    /**
+     * More convenient method to log errors from server
+     * it delegates message printing to more general
+     * logMessage() method
+     * @param message message to be logged
+     */
+    //TODO: change font to be blue?
     public void info(String message) {
         logMessage(message);
     }
 
+    /**
+     * More convenient method to log errors from server
+     * it delegates message printing to more general
+     * logMessage() method
+    */
+    //TODO: change font to be red
     public void error(String message) {
         logMessage(message);
     }
 
     /**
-     * Prints parameter message to message area for server client traffic.
      *
-     * @param message Strifng message to print on message area
+     * Prints log in window responsible for logging
+     * messages from server
+     * @param message message to be logged
      */
     public void logMessage(String message) {
         tetrisFrame.printServerLog(dateFormat.format(new Date()) + ": " + message + LINE_SEPARATOR);

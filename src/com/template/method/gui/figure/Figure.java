@@ -4,66 +4,26 @@ import java.awt.*;
 import javax.swing.*;
 import java.io.*;
 
-/**
- * <p>Headline: GUI.Figure</p>
- * <p>Description: This class creates a Tetris figure with four blocks.</p>
- * <p>Copyright: Copyright (c) 2004</p>
- * <p>Organisation: Tetris Connection</p>
- *
- * @author Gath Sebastian, gath, gath@inf.uni-konstanz.de, 01/556108
- * @author Hug Holger, hug, hug@inf.uni-konstanz.de, 01/566368
- * @author Raedle Roman, raedler, raedler@inf.uni-konstanz.de, 01/546759
- * @author Weiler Andreas, weiler, weiler@inf.uni-konstanz.de, 01/560182
- * @version 1.0
- */
 
+/**
+ *  Class encapsulating bock creating and managment
+ */
 public class Figure extends JComponent implements Serializable {
 
-    //tetris blocks
     private Block blockOne;
     private Block blockTwo;
     private Block blockThree;
     private Block blockFour;
-
-    public Block getBlockOne() {
-        return blockOne;
-    }
-
-    public Block getBlockTwo() {
-        return blockTwo;
-    }
-
-    public Block getBlockThree() {
-        return blockThree;
-    }
-
-    public Block getBlockFour() {
-        return blockFour;
-    }
-
     //rotate position of the tetris figure
     private int figurePosition = 0;
-
-    public int getFigurePosition() {
-        return figurePosition;
-    }
-
     //color of the tetris figure
     protected Color randomFigure = null;
-
-    //inherit the tetris figure type 1,2,3,4,5,6 or 7
+    // figure type 1,2,3,4,5,6 or 7
     protected int figureType = 0;
-
-    //x start position of the tetris figure on the tetris battle field
+    //x start position of the figure on the  battle field
     protected int startX = 20;
-
-    //y start position of the tetris figure on the tetris battle field
+    //y start position of the figure on the battle field
     private int startY = 20;
-
-    public int getStartY() {
-        return startY;
-    }
-
     //tetris block width
     protected int blockWidth = 20;
 
@@ -85,15 +45,9 @@ public class Figure extends JComponent implements Serializable {
     //static tetris block height -> addForInfoPanel
     protected static int sBlockHeight = 20;
 
-    /**
-     * standard constructor
-     */
-    public Figure() {
-
-    }
 
     /**
-     * Initialization of the tetris figure with size and start position on the tetris battle field.
+     * Initializes the tetris figure with size and start position on the tetris battle field.
      *
      * @param startX int x start position of tetris figure on the tetris battle field
      * @param startY int y start position of tetris figure on the tetris battle field
@@ -111,30 +65,22 @@ public class Figure extends JComponent implements Serializable {
         this.makeFigure();
     }
 
+    public Figure() {}
+
     /**
-     * Used for repaint hierarchy.
-     *
-     * @param g Graphics not used
+     * Force swing component repaint
+
      */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
     }
 
     /**
-     * Creates two random int values. The first random called figure type creates an integer value range
-     * starting at 1 till 7. This is used for creating one of the seven tetris figures. The second random
-     * integer value called figure position creates a value from 0 till 3. And it is used to create the
-     * figure rotate position.
+     * Spawns the first figure (from one to seven)
      *
-     * @todo Angabe der figurePosition soll m�glich sein. Fehler taucht jetzt auf da Zahlen von 0 bis 3
-     * generiert werden, aber in manchen make figures nur zahlen von 0 bis 1 oder nur 0 erlaubt sind.
      */
     public void makeFigure() {
-        //creates an integer value 1 - 7
         this.figureType = (int) (Math.random() * 8);
-        //creates an integer value 0 - 3
-        //this.figurePosition = (int) (Math.random() * 3);
-
         if (this.figureType == 0) {
             this.makeFigure();
         }
@@ -360,19 +306,9 @@ public class Figure extends JComponent implements Serializable {
         this.add(blockFour);
     }
 
-    /**
-     * Returns tetris block size.
-     *
-     * @return int Tetris block size
-     */
-    public int getBlockSize() {
-        return this.blockSize;
-    }
 
     /**
-     * Returns tetris figure color.
-     *
-     * @return Color tetris figure color
+     * Returns  figure color.
      */
     public Color getColor() {
         return this.randomFigure;
@@ -380,8 +316,6 @@ public class Figure extends JComponent implements Serializable {
 
     /**
      * Returns the highest x-coordinate of all four tetris blocks.
-     *
-     * @return int Highest x-coordinate of all four tetris blocks
      */
     public int getHighestX() {
         int max = this.blockOne.getX();
@@ -399,8 +333,6 @@ public class Figure extends JComponent implements Serializable {
 
     /**
      * Returns the lowest x-coordinate of all four tetris blocks.
-     *
-     * @return int Lowest x-coordinate of all four tetris blocks
      */
     public int getLowestX() {
         int min = this.blockOne.getX();
@@ -419,8 +351,6 @@ public class Figure extends JComponent implements Serializable {
 
     /**
      * Returns the highest y-coordinate of all four tetris blocks.
-     *
-     * @return int Highest y-coordinate of all four tetris blocks
      */
     public int getHighestY() {
         int max = this.blockOne.getY();
@@ -436,28 +366,9 @@ public class Figure extends JComponent implements Serializable {
         return max;
     }
 
-    /**
-     * Returns the lowest y-coordinate of all four tetris blocks.
-     *
-     * @return int Lowest y-coordinate of all four tetris blocks
-     */
-    public int getLowestY() {
-        int min = this.blockOne.getY();
-        if (this.blockTwo.getY() < min) {
-            min = this.blockTwo.getY();
-        }
-        if (this.blockThree.getY() < min) {
-            min = this.blockThree.getY();
-        }
-        if (this.blockFour.getY() < min) {
-            min = this.blockFour.getY();
-
-        }
-        return min;
-    }
 
     /**
-     * Move tetris figure down.
+     * Moves figure down
      */
     public void moveDown() {
         this.setLocation(this.getX(), this.getY() + (1 * addY));
@@ -465,7 +376,7 @@ public class Figure extends JComponent implements Serializable {
     }
 
     /**
-     * Move tetris figure left.
+     * Moves figure left
      */
     public void moveLeft() {
         this.setLocation(this.getX() - (1 * addX), this.getY());
@@ -473,7 +384,7 @@ public class Figure extends JComponent implements Serializable {
     }
 
     /**
-     * Move tetris figure right.
+     * Moves figure right
      */
     public void moveRight() {
         this.setLocation(this.getX() + (1 * addX), this.getY());
@@ -481,7 +392,7 @@ public class Figure extends JComponent implements Serializable {
     }
 
     /**
-     * Left rotation of tetris figure. All cases are implemented in this method.
+     * Rotates the figure to the left
      */
     public void rotateLeft() {
         this.removeAll();
@@ -517,10 +428,10 @@ public class Figure extends JComponent implements Serializable {
     }
 
     /**
-     * Pre rotation of the tetris figure. Used for check if rotate left is allowed.
+     * Check if the rotation is allowed
      *
-     * @param color Color Current color of the tetris figure
-     * @return int[] Tetris figure positions -> preLowestX and preHighestX
+     * @param color color of the block used to check what kind of block is on the board
+     * @return int[] positions of the block after rotation
      */
     public int[] preRotate(Color color) {
         int position = this.figurePosition;
@@ -671,7 +582,7 @@ public class Figure extends JComponent implements Serializable {
     }
 
     /**
-     * Right rotation of tetris figure. All cases are implemented in this method.
+     *  Rotates block to the right
      */
     public void rotateRight() {
         this.removeAll();
@@ -727,11 +638,7 @@ public class Figure extends JComponent implements Serializable {
         this.repaint();
     }
 
-    /**
-     * Creates tetris figure one for add to info panel.
-     *
-     * @return Component Return tetris figure one for add to info panel
-     */
+
     public Component getFigureOne() {
         Figure returnFigure = new Figure();
         returnFigure.blockOne = new Block(sBlockWidth, sBlockHeight, 80, 20, Color.RED);
@@ -746,11 +653,6 @@ public class Figure extends JComponent implements Serializable {
         return returnFigure;
     }
 
-    /**
-     * Creates tetris figure two for add to info panel.
-     *
-     * @return Component Return tetris figure two for add to info panel
-     */
     public Component getFigureTwo() {
         Figure returnFigure = new Figure();
         returnFigure.blockOne = new Block(sBlockWidth, sBlockHeight, 80, 40, Color.GREEN);
@@ -765,11 +667,7 @@ public class Figure extends JComponent implements Serializable {
         return returnFigure;
     }
 
-    /**
-     * Creates tetris figure three for add to info panel.
-     *
-     * @return Component Return tetris figure three for add to info panel
-     */
+
     public Component getFigureThree() {
         Figure returnFigure = new Figure();
         returnFigure.blockOne = new Block(sBlockWidth, sBlockHeight, 80, 40, Color.ORANGE);
@@ -784,11 +682,7 @@ public class Figure extends JComponent implements Serializable {
         return returnFigure;
     }
 
-    /**
-     * Creates static tetris figure four for add to info panel.
-     *
-     * @return Component Return tetris figure four for add to info panel
-     */
+
     public Component getFigureFour() {
         Figure returnFigure = new Figure();
         returnFigure.blockOne = new Block(sBlockWidth, sBlockHeight, 80, 40, Color.BLUE);
@@ -803,11 +697,7 @@ public class Figure extends JComponent implements Serializable {
         return returnFigure;
     }
 
-    /**
-     * Creates tetris figure five for add to info panel.
-     *
-     * @return Component Return tetris figure five for add to info panel
-     */
+
     public Component getFigureFive() {
         Figure returnFigure = new Figure();
         returnFigure.blockOne = new Block(sBlockWidth, sBlockHeight, 80, 40, Color.YELLOW);
@@ -822,11 +712,7 @@ public class Figure extends JComponent implements Serializable {
         return returnFigure;
     }
 
-    /**
-     * Creates tetris figure six for add to info panel.
-     *
-     * @return Component Return tetris figure six for add to info panel
-     */
+
     public Component getFigureSix() {
         Figure returnFigure = new Figure();
         returnFigure.blockOne = new Block(sBlockWidth, sBlockHeight, 80, 40, Color.PINK);
@@ -841,11 +727,7 @@ public class Figure extends JComponent implements Serializable {
         return returnFigure;
     }
 
-    /**
-     * Creates tetris figure seven for add to info panel.
-     *
-     * @return Component Return tetris figure seven for add to info panel
-     */
+
     public Component getFigureSeven() {
         Figure returnFigure = new Figure();
         returnFigure.blockOne = new Block(sBlockWidth, sBlockHeight, 80, 40, Color.DARK_GRAY);
@@ -861,11 +743,38 @@ public class Figure extends JComponent implements Serializable {
     }
 
     /**
-     * Removes all block on this tetris figure.
+     * Removes all block
      */
     public void removeBlocks() {
         this.removeAll();
     }
 
+
+
+    public Block getBlockOne() {
+        return blockOne;
+    }
+
+    public Block getBlockTwo() {
+        return blockTwo;
+    }
+
+    public Block getBlockThree() {
+        return blockThree;
+    }
+
+    public Block getBlockFour() {
+        return blockFour;
+    }
+
+
+    public int getFigurePosition() {
+        return figurePosition;
+    }
+
+
+    public int getStartY() {
+        return startY;
+    }
 
 }
