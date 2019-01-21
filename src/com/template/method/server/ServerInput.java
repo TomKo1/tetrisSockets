@@ -1,48 +1,20 @@
 package com.template.method.server;
 
 import com.template.method.server.command.ServerRequestable;
-
 import java.io.*;
 import java.net.*;
 
 
 /**
- * <p>Headline: tetris.server.ServerInput</p>
- * <p>Description: Implements the server ObjectInputStream.</p>
- * <p>Copyright: Copyright (c) 2004</p>
- * <p>Organisation: Tetris Connection</p>
- *
- * @author Gath Sebastian, gath, gath@inf.uni-konstanz.de, 01/556108
- * @author Hug Holger, hug, hug@inf.uni-konstanz.de, 01/566368
- * @author Raedle Roman, raedler, raedler@inf.uni-konstanz.de, 01/546759
- * @author Weiler Andreas, weiler, weiler@inf.uni-konstanz.de, 01/560182
- * @version 1.0
+ * Encapsulates server input stream and manages it
  */
-
 public class ServerInput extends Thread {
 
-    //client socket
-    private Socket clientSocket = null;
-
-    //thread server outputStream
-    private ServerOutput serverOutput = null;
-
-    //server object input stream
+    private Socket clientSocket;
+    private ServerOutput serverOutput;
     private ObjectInputStream inputStream = null;
+    public TetrisServer tetrisServer;
 
-    //client name
-    public String clientName = null;
-
-    //tetris server
-    public TetrisServer tetrisServer = null;
-
-    /**
-     * Initialize thread server inputStream with client socket, thread server outputStream and tetris server object.
-     *
-     * @param client Socket Tetris client socket
-     * @param serverOutput   ServerOutput Thread server outputStream object
-     * @param tetrisServer     TetrisServer Tetris server object
-     */
     public ServerInput(Socket client, ServerOutput serverOutput, TetrisServer tetrisServer) {
         this.serverOutput = serverOutput;
         this.clientSocket = client;
@@ -57,33 +29,24 @@ public class ServerInput extends Thread {
     }
 
     /**
-     * Implements the run method.
+     * Reads the input stream in the loop and executes the requests (only the valid
+     * request thanks to ServerRequestable inheritance of such objects)
      */
     public void run() {
-        //while socket connection is established do this loop
+
         while (true) {
             try {
-                //if there is no object to read the loop rests here
                 Object o = inputStream.readObject();
-                System.out.println(o);
 
                 if (o instanceof ServerRequestable) {
                     ((ServerRequestable) o).execute(tetrisServer);
                 }
+                // ignore other not valid requests
             }
             catch (IOException | ClassNotFoundException ioe) {
                 tetrisServer.getLog().error(ioe.getMessage());
                 ioe.printStackTrace();
             }
         }
-    }
-
-    /**
-     * Returns client name.
-     *
-     * @return String Client name
-     */
-    public String getClientName() {
-        return this.clientName;
     }
 }

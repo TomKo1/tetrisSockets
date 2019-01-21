@@ -2,7 +2,7 @@ package com.template.method.gui;
 
 import com.template.method.client.ThreadTetrisClient;
 import com.template.method.gui.figure.Figure;
-import com.template.method.server.XMLParser;
+import com.template.method.utilities.XMLParser;
 
 import java.awt.*;
 import java.awt.event.*;

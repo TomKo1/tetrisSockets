@@ -1,4 +1,4 @@
-package com.template.method.server;
+package com.template.method.utilities;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -11,10 +11,16 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import java.text.ParseException;
 
+/**
+ *  Class which encapsulates XML parsing of configuration which is stored in XML file
+ */
 public class XMLParser {
 
+    /**
+     * Utility method which parses xml file with configuration under given path
+     *
+    */
     public static Configuration parseConfiguration(String fileName) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         String ip = "";
@@ -61,6 +67,10 @@ public class XMLParser {
     }
 
 
+    /**
+     * Class encapsulating configuration which was read from xml file
+     * and is returned after parsing the doc
+    */
     public static class Configuration {
         String ipNumber;
         Integer port;

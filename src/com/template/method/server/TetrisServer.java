@@ -5,99 +5,48 @@ import com.template.method.gui.figure.Figure;
 import com.template.method.server.command.StartGameRequest;
 import com.template.method.server.command.StopGameRequest;
 import com.template.method.server.command.Logable;
-import com.template.method.server.timer.TickTask;
-
+import com.template.method.server.utilities.TickTask;
 import java.io.*;
 import java.net.*;
 import java.util.*;
 
 
 /**
- * TODO: document me!!!
- *
- * <p>Headline: tetris.server.TetrisServer</p>
- * <p>Description: This class implements the Tetris Server.</p>
- * <p>Copyright: Copyright (c) 2004</p>
- * <p>Organisation: Tetris Connection</p>
- *
- * @author Gath Sebastian, gath, gath@inf.uni-konstanz.de, 01/556108
- * @author Hug Holger, hug, hug@inf.uni-konstanz.de, 01/566368
- * @author Raedle Roman, raedler, raedler@inf.uni-konstanz.de, 01/546759
- * @author Weiler Andreas, weiler, weiler@inf.uni-konstanz.de, 01/560182
- * @version $Id: TetrisServer.java,v 1.1.1.1 2006/03/23 23:35:55 raedler Exp $
+ *  Creates server connection and encapsulates out/inputstream of
+ *  the server.
  */
-
 public class TetrisServer {
 
-    //tetris clientSocket
     protected Socket clientSocket = null;
-
-    //client threads in stack
+    // client's out/instream wrappers
     protected List<ServerInput> serverInputs;
-
-    //client threads outputStream stack
     protected List<ServerOutput> serverOutputs;
-
-    public List<ServerOutput> getServerOutputs() {
-        return serverOutputs;
-    }
-
-    //tetris figure list
+    // figures
     protected List<Figure> figures;
-
-    //number of tetris clients
     protected int numberClients = 0;
-
-    //number of tetris players
     protected int numberPlayers = 1;
-
-    //tetris server socket
     protected ServerSocket serverSocket = null;
-
-    //tick dummy -> used for tetris thread outputStream
+    // synchronization object
     protected final Object tickDummy = new Object();
-
     //tetris client points array
     public int[] clientPoints = null;
-
-    //sleep time
+    // time between which clock sends tick object
     protected int time = 4000;
-
-    //tetris thread timer task -> tick
+    // server ticker (clock)
     private TickTask ticker;
-
-    public TickTask getTicker() {
-        return ticker;
-    }
-
-    //tetris play time
-    private int playTime = 0;
-
-    //to break tetris server
+    //break tetris server
     public boolean breakServer = false;
-
     private Logable log;
 
-    public Logable getLog() {
-        return log;
-    }
 
-    public void setLog(Logable log) {
-        this.log = log;
-    }
 
-    /**
-     * Consructor creates a stack for client threads in and client threads outputStream and the first figure
-     * list for the clients.
-     */
     public TetrisServer(Logable log) {
         this.log = log;
 
-        serverInputs = new ArrayList<ServerInput>();
-        serverOutputs = new ArrayList<ServerOutput>();
+        serverInputs = new ArrayList<>();
+        serverOutputs = new ArrayList<>();
 
-        //list with figures for tetris clients
-        figures = new ArrayList<Figure>();
+        figures = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
             Figure f = new Figure(120, 60, 20, 20);
@@ -105,16 +54,9 @@ public class TetrisServer {
         }
     }
 
-    /**
-     * Start method for the tetris server
-     *
-     * @param port  int The server isClientRunning port
-     * @param playTime int Tetris play time
-     * @throws IOException ???
-     */
-    public void runTetrisServer(int port, int playTime) throws IOException {
 
-        this.playTime = playTime;
+
+    public void runTetrisServer(int port, int playTime) {
 
         try {
             serverSocket = new ServerSocket(port);
@@ -130,29 +72,26 @@ public class TetrisServer {
             try {
                 clientSocket = serverSocket.accept();
 
-                //start input and output for this client on server side
                 ServerOutput output = new ServerOutput(clientSocket, tickDummy);
                 ServerInput input = new ServerInput(clientSocket, output, this);
                 output.start();
                 input.start();
 
-                //send figure list to client
+                // send list of figures to the client
                 output.addSendable(new FigureResponse(figures));
                 synchronized (tickDummy) {
                     tickDummy.notifyAll();
                 }
 
-                //send client id to client
+                // send id of client to client
                 output.addSendable(new ClientId(numberPlayers));
                 synchronized (tickDummy) {
                     tickDummy.notifyAll();
                 }
 
-                //add threads in and outputStream to stack
                 serverInputs.add(input);
                 serverOutputs.add(output);
 
-                //player number decrement
                 numberPlayers--;
 
                 log.info("The absence of players: " + numberPlayers);
@@ -178,7 +117,7 @@ public class TetrisServer {
 
         log.info("The game starts with " + serverInputs.size() + " players");
 
-        //send start game command to each client
+        // send start requests to all clients
         for (ServerOutput serverOutput : serverOutputs) {
             serverOutput.addSendable(new StartGameRequest());
             log.info("The server sends the start game command.");
@@ -186,7 +125,7 @@ public class TetrisServer {
             log.info("The servers sends start chat command");
         }
 
-        //TimerTask tick
+        // new timer task
         ticker = new TickTask(serverOutputs, 1000, tickDummy);
         ticker.start();
 
@@ -206,7 +145,7 @@ public class TetrisServer {
             playTime -= 1000;
         }
 
-        //send finalpoints to each client
+        // final points to all players
         int i = 0;
         for (ServerOutput serverOutput : serverOutputs) {
             serverOutput.addSendable(new Points(clientPoints[i]));
@@ -249,28 +188,42 @@ public class TetrisServer {
     }
 
 
+    /**
+     * Broadcast given message to all chat windows
+     * @param message message to be broadcasted
+     */
     public void broadcastToAllPlayers(String message) {
         for(ServerOutput serverOutput : serverOutputs) {
-            System.out.println(message);
             serverOutput.addSendable(new ReceiveMessage(message));
         }
     }
 
+
     /**
-     * Stops tick and break server.
+     * Stops the ticker and the server
      */
     public void stopTick() {
         this.breakServer = true;
         this.ticker.destroyTickTask();
     }
 
-    /**
-     * Set tetris number players.
-     *
-     * @param i int Number of tetris players
-     */
+
     public void setNumberPlayers(int i) {
         this.numberPlayers = i;
         this.clientPoints = new int[i];
     }
+
+    public List<ServerOutput> getServerOutputs() {
+        return serverOutputs;
+    }
+
+    public Logable getLog() {
+        return log;
+    }
+
+
+    public TickTask getTicker() {
+        return ticker;
+    }
+
 }
