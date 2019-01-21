@@ -4,7 +4,6 @@ import java.util.*;
 import java.util.List;
 import javax.swing.*;
 import java.awt.*;
-
 import com.template.method.client.TetrisClient;
 import com.template.method.gui.figure.Block;
 import com.template.method.gui.figure.Figure;
@@ -36,9 +35,10 @@ public class BattleField extends JFrame {
     protected ClientFrame clientFrame ;
 
     public BattleField(TetrisClient tetrisClient, ClientFrame clientFrame) {
-        super("Tetris game");
+        super("Tetris");
 
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+
 
 
         setResizable(false);
@@ -60,6 +60,7 @@ public class BattleField extends JFrame {
         this.tetrisClient = tetrisClient;
         this.clientDummy = tetrisClient.getClientDummy();
         this.playerName = tetrisClient.getPlayerName();
+
 
         firstTime = true;
     }

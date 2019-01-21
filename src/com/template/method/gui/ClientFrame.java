@@ -230,7 +230,6 @@ public class ClientFrame extends JFrame {
         pStartServerButton.add(defaultStartServerBtn);
 
 
-
         //set panels on server panel
         serverPanel.add(new JLabel("Hostuj grę"));
         serverPanel.add(pServerPort);
