@@ -20,6 +20,9 @@ public class TetrisFrame extends JFrame {
         try {
             tetrisFrameInit();
             setSize(590, 1000);
+            setBackground(Color.GRAY);
+            panelClientServer.setBackground(Color.GRAY);
+            clientFrame.setBackground(Color.GRAY);
             setResizable(false);
         }
         catch (Exception e) {
@@ -34,10 +37,10 @@ public class TetrisFrame extends JFrame {
     public void initServerLog() {
 
         JPanel serverPanel = new JPanel();
-        setSize(2500, 1000);
+        setSize(1400, 1200);
         serverLogTextArea.append("Server started!\n");
 
-        serverLogTextArea.setPreferredSize(new Dimension(1600, 1200));
+        serverLogTextArea.setPreferredSize(new Dimension(800, 1200));
         serverLogTextArea.setEditable(false);
         serverPanel.add(serverLogTextArea);
 

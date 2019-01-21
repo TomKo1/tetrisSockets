@@ -50,10 +50,11 @@ public class ChatFrame extends JFrame {
             String message = inputMessage.getText();
 
             if(message != null && !message.isEmpty()) {
-                System.out.println("Message was sent!");
                 this.inputMessage.setText("");
                 String messageFormatted = String.format("%s:> %s\n", tetrisClient.getPlayerName(), message);
                 tetrisClient.getOutput().addSendable(new BroadcastMessage(messageFormatted));
+                // to make delay in receiving less visible
+                tetrisClient.printReceivedMessage(messageFormatted);
             }
         });
 

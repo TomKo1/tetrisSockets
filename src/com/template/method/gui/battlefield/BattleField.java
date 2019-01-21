@@ -42,8 +42,8 @@ public class BattleField extends JFrame {
 
 
         setResizable(false);
-        setPreferredSize(new Dimension(290, 490));
-        setSize(new Dimension(290, 490));
+        setPreferredSize(new Dimension(280, 480));
+        setSize(new Dimension( 280, 480));
         addKeyListener(new BattleFieldKeyListener(this));
         setVisible(true);
         enableInputMethods(true);

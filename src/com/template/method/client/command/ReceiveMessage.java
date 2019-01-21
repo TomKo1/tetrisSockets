@@ -14,7 +14,10 @@ public class ReceiveMessage implements ClientRequestable {
     }
 
     public void execute(TetrisClient tetrisClient) {
-        tetrisClient.printReceivedMessage(message);
+        // discard message printing if the client is sender
+        if(!message.contains(tetrisClient.getPlayerName())) {
+            tetrisClient.printReceivedMessage(message);
+        }
     }
 
     public String getMessageKey() {
