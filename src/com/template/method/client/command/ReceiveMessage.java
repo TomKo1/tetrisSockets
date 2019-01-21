@@ -1,8 +1,10 @@
 package com.template.method.client.command;
 
 import com.template.method.client.TetrisClient;
-import com.template.method.client.command.Clientable;
 
+/**
+ *  Command send by server in order to receive message that was broadcasted across the room
+ */
 public class ReceiveMessage implements Clientable {
 
     private String message;
@@ -12,16 +14,10 @@ public class ReceiveMessage implements Clientable {
     }
 
     public void execute(TetrisClient tetrisClient) {
-        System.out.println("Odbieram: " + message);
-
         tetrisClient.printReceivedMessage(message);
     }
 
     public String getMessageKey() {
         return "tetris.client.command.impl.ReceiveMessage";
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 }

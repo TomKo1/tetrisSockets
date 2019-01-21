@@ -5,47 +5,26 @@ import com.template.method.client.command.Clientable;
 import com.template.method.server.TetrisServer;
 import com.template.method.server.command.Tickable;
 import com.template.method.server.command.impl.ServerLog;
-
 import java.io.*;
 import java.net.*;
 import javax.swing.*;
 
-/**
- * <p>Headline: tetris.client.ClientInput</p>
- * <p>Description: Implements the ObjectInputStream.</p>
- * <p>Copyright: Copyright (c) 2004</p>
- * <p>Organisation: Tetris Connection</p>
- *
- * @author Gath Sebastian, gath, gath@inf.uni-konstanz.de, 01/556108
- * @author Hug Holger, hug, hug@inf.uni-konstanz.de, 01/566368
- * @author Raedle Roman, raedler, raedler@inf.uni-konstanz.de, 01/546759
- * @author Weiler Andreas, weiler, weiler@inf.uni-konstanz.de, 01/560182
- * @version 1.0
- */
 
+/**
+ *  Implements the client input behaviour as a separate thread
+ */
 public class ClientInput extends Thread {
 
-    //tetris client
+
     protected TetrisClient tetrisClient;
-
-    //game is over boolean
-    protected boolean gameIsOver;
-
-    //tetris client object input stream
     protected ObjectInputStream in;
-
-    //tetris server socket
     protected Socket serverSocket;
-
-    //tetris server
     protected TetrisServer tetrisServer;
 
 
     /**
-     * Initialization of server socket, tetris client and ObjectInputStream.
-     *
-     * @param server Socket Tetris server socket
-     * @param client TetrisClient Tetris client
+     * Initializes the object with socket bound to the server
+     * and tetrisclient object
      */
     ClientInput(Socket server, TetrisClient client) {
         this.serverSocket = server;
@@ -63,30 +42,28 @@ public class ClientInput extends Thread {
      * Start tetris client in thread.
      */
     public void run() {
-
-        //noinspection InfiniteLoopStatement
         while (true) {
             try {
-                // Read object of ObjectInputStream.
                 Object o = in.readObject();
 
                 if (o instanceof Tickable) {
+                    // ticable object is a request for battlefield to be repainted
                     tetrisClient.getBattleField().newRepaint();
                 }
                 else if (o instanceof Clientable) {
+                    // wait until the previous command was done
                     synchronized (tetrisClient.getClientDummy()) {
                         tetrisClient.getClientDummy().notifyAll();
                     }
 
+                    // execute request from server
                     Clientable clientable = (Clientable) o;
 
                     clientable.execute(tetrisClient);
 
                     tetrisClient.getOutput().addSendable(new ServerLog(ServerLog.Type.INFO, clientable.getMessageKey()));
                 }
-            }
-            //in case the connection is broken ... close and exit app
-            catch (IOException ioe) {
+            } catch (IOException ioe) {
                 JOptionPane.showMessageDialog(tetrisClient.getBattleField().getContentPane(), "Połączenie z serverem utracone!", "Błąd", JOptionPane.ERROR_MESSAGE);
                 ioe.printStackTrace();
             }

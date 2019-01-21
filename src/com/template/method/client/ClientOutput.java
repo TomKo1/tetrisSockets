@@ -8,86 +8,32 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-/**
- * TODO: document me!!!
- *
- * <p>Headline: ServerClient.ThreadClientout</p>
- * <p>Description: Implements the ObjectOutputStream.</p>
- * <p>Copyright: Copyright (c) 2004</p>
- * <p>Organisation: Tetris Connection</p>
- *
- * @author Gath Sebastian, gath, gath@inf.uni-konstanz.de, 01/556108
- * @author Hug Holger, hug, hug@inf.uni-konstanz.de, 01/566368
- * @author Raedle Roman, raedler, raedler@inf.uni-konstanz.de, 01/546759
- * @author Weiler Andreas, weiler, weiler@inf.uni-konstanz.de, 01/560182
- * @version $Id: ClientOutput.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
- */
 
+/**
+ *  Implements client output (which sends command to the server-side) as a separate thread
+ */
 public class ClientOutput extends Thread {
 
-    //tetris client object output stream
     private ObjectOutputStream outputStream;
-
-    //command list
     private List<Commandable> commandables;
-
-    /**
-     * Add command object to command list.
-     *
-     * @param sendable SimpleCommandObject Tetris command object
-     */
-    public void addSendable(Serverable sendable) {
-        this.commandables.add(sendable);
-    }
-
-    //tetris client dummy
+    // synchronizing object
     private final Object clientDummy;
-
-    /**
-     * Returns client dummy object.
-     *
-     * @return Object Client dummy
-     */
-    public Object getClientDummy() {
-        return this.clientDummy;
-    }
-
-    //client player name
-    private String clientName = "Player";
-
-    /**
-     * Returns client name.
-     *
-     * @return String Client name
-     */
-    public String getClientName() {
-        return clientName;
-    }
-
-    /**
-     * Set client name.
-     *
-     * @param clientName String Client name
-     */
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
-    }
-
+    private String clientName;
     //game is over boolean
     public boolean gameIsOverNow = false;
 
+
     /**
-     * Initialize the thread client outputStream with socket socket, client clientDummy and client name.
      *
-     * @param socket     Socket Tetris socket socket
-     * @param clientDummy      Object Client clientDummy
-     * @param clientName String Client name
+     * @param socket socket object representing cient-side connection
+     * @param clientDummy synchronization (mutex) object
+     * @param clientName client Name
      */
     public ClientOutput(Socket socket, Object clientDummy, String clientName) {
         this.clientDummy = clientDummy;
         this.clientName = clientName;
 
-        commandables = new ArrayList<Commandable>();
+        commandables = new ArrayList<>();
 
         try {
             outputStream = new ObjectOutputStream(socket.getOutputStream());
@@ -98,11 +44,19 @@ public class ClientOutput extends Thread {
     }
 
     /**
-     * Implements the run method
+     * Adds command to list of commands to be sent to
+     * the server
+     */
+    public void addSendable(Serverable sendable) {
+        this.commandables.add(sendable);
+    }
+
+
+    /**
+     *  Run method
      */
     public void run() {
 
-        //noinspection InfiniteLoopStatement
         while (true) {
             try {
                 synchronized (clientDummy) {
@@ -115,7 +69,6 @@ public class ClientOutput extends Thread {
             while (!commandables.isEmpty()) {
 
                 Commandable commandable = commandables.remove(0);
-                System.out.println(commandable);
 
                 try {
                     outputStream.writeObject(commandable);
@@ -126,5 +79,9 @@ public class ClientOutput extends Thread {
                 }
             }
         }
+    }
+
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
     }
 }

@@ -108,7 +108,7 @@ public class TetrisServer {
     /**
      * Start method for the tetris server
      *
-     * @param port  int The server running port
+     * @param port  int The server isClientRunning port
      * @param playTime int Tetris play time
      * @throws IOException ???
      */

@@ -1,19 +1,11 @@
 package com.template.method.client.command;
 
 import com.template.method.client.TetrisClient;
-import com.template.method.client.command.Clientable;
+
 
 /**
- * TODO: document me!!!
- * <p/>
- * <code>StopClient</code>.
- * <p/>
- * User: rro
- * Date: 23.03.2006
- * Time: 18:17:46
- *
- * @author Roman R&auml;dle
- * @version $Id: StopClient.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
+ *  Request received from server-side that sets the isRunning flag to be false
+ *  and gently stops the game on the client-side
  */
 public class StopClient implements Clientable {
 

@@ -1,20 +1,11 @@
 package com.template.method.client.command;
 
-import com.template.method.client.command.Clientable;
+
 import com.template.method.client.TetrisClient;
 
 /**
- * TODO: document me!!!
- * <p/>
- * <code>Points</code>.
- * <p/>
- * User: rro
- * Date: 23.03.2006
- * Time: 19:55:40
- *
- * @author Roman R&auml;dle
- * @version $Id: Points.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
- */
+* Command responsible for setting points on the client side
+*/
 public class Points implements Clientable {
 
     private int points;

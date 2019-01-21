@@ -1,21 +1,12 @@
 package com.template.method.client.command;
 
-import com.template.method.client.command.Clientable;
-import com.template.method.client.TetrisClient;
 
+
+import com.template.method.client.TetrisClient;
 import java.util.List;
 
 /**
- * TODO: document me!!!
- * <p/>
- * <code>FigureResponse</code>.
- * <p/>
- * User: rro
- * Date: 23.03.2006
- * Time: 19:48:55
- *
- * @author Roman R&auml;dle
- * @version $Id: FigureResponse.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
+ * Command responsible for adding new figures to the battlefield
  */
 public class FigureResponse implements Clientable {
 

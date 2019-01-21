@@ -1,8 +1,10 @@
 package com.template.method.client.command;
 
 import com.template.method.client.TetrisClient;
-import com.template.method.client.command.Clientable;
 
+/**
+ *  Request received from server when there is a need to start a chat
+ */
 public class StartChat implements Clientable {
 
     public void execute(TetrisClient tetrisClient) {

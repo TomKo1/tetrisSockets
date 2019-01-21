@@ -5,18 +5,9 @@ import com.template.method.shared.Commandable;
 
 
 /**
- * TODO: document me!!!
- * <p/>
- * <code>Clientable</code>.
- * <p/>
- * User: rro
- * Date: 23.03.2006
- * Time: 19:10:17
- *
- * @author Roman R&auml;dle
- * @version $Id: Clientable.java,v 1.1.1.1 2006/03/23 23:35:56 raedler Exp $
+ * Interface implemented by all commands responsible for doing sth on the client side
  */
 public interface Clientable extends Commandable {
-    public void execute(TetrisClient tetrisClient);
-    public String getMessageKey();
+     void execute(TetrisClient tetrisClient);
+     String getMessageKey();
 }

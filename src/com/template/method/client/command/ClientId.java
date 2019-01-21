@@ -1,11 +1,10 @@
 package com.template.method.client.command;
 
 import com.template.method.client.TetrisClient;
-import com.template.method.client.command.Clientable;
-
 
 /**
- * Command responsible for
+ * Command responsible for setting the client id
+ * on the client side - send by server
  */
 public class ClientId implements Clientable {
 
