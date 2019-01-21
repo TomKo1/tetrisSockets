@@ -9,4 +9,8 @@ class BroadcastMessageTest {
     @Test
     void execute() {
     }
+
+    @Test
+    void execute1() {
+    }
 }
