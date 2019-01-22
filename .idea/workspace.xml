@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df5d59e6-b411-4987-94d7-fe9c0507f07a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/ClientFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/ClientFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/TetrisFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/TetrisFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/battlefield/BattleField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/battlefield/BattleField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/figure/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisApp/com/template/method/gui/figure/Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/tetrisApp/com/template/method/gui/TetrisFrameTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/tetrisApp/com/template/method/gui/TetrisFrameTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/tetrisApp/com/template/method/gui/figure/BlockTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/tetrisApp/com/template/method/gui/figure/BlockTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/template/method/gui/ClientFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/gui/ClientFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/template/method/gui/TetrisFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/gui/TetrisFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/template/method/gui/figure/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/gui/figure/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/template/method/gui/figure/Figure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/gui/figure/Figure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/com/template/method/gui/TetrisFrameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/template/method/gui/TetrisFrameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/com/template/method/gui/figure/BlockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/template/method/gui/figure/BlockTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/com/template/method/gui/figure/FigureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/template/method/gui/figure/FigureTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -47,7 +34,7 @@
         <counts>
           <entry key="groovy" value="1" />
           <entry key="iml" value="2" />
-          <entry key="java" value="312" />
+          <entry key="java" value="313" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
@@ -55,20 +42,20 @@
         <counts>
           <entry key="Groovy" value="1" />
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="312" />
+          <entry key="JAVA" value="313" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="53" />
-          <entry key="java" value="25397" />
+          <entry key="java" value="25690" />
           <entry key="xml" value="95" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="25397" />
+          <entry key="JAVA" value="25690" />
           <entry key="PLAIN_TEXT" value="53" />
           <entry key="XML" value="95" />
         </counts>
@@ -127,8 +114,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/com/template/method/gui/figure/FigureTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="511">
-                  <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
+                <state relative-caret-position="605">
+                  <caret line="143" column="62" selection-start-line="143" selection-start-column="62" selection-end-line="143" selection-end-column="62" />
                 </state>
               </provider>
             </entry>
@@ -207,14 +194,27 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/figure/Figure.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-157">
-                  <caret line="214" column="102" lean-forward="true" selection-start-line="214" selection-start-column="92" selection-end-line="214" selection-end-column="102" />
+                <state relative-caret-position="266">
+                  <caret line="381" column="24" selection-start-line="381" selection-start-column="16" selection-end-line="381" selection-end-column="24" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#29730#29731#0" expanded="true" />
                     <element signature="e#29771#29772#0" expanded="true" />
                     <element signature="e#29930#29931#0" expanded="true" />
                     <element signature="e#29957#29958#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.desktop/java/awt/Component.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="356">
+                  <caret line="2096" column="16" selection-start-line="2096" selection-start-column="16" selection-end-line="2096" selection-end-column="16" />
+                  <folding>
+                    <element signature="e#72045#72046#0" expanded="true" />
+                    <element signature="e#72071#72072#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -235,9 +235,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ClientNameAction</find>
-      <find>new</find>
-      <find>addActionListener</find>
       <find>new Start</find>
       <find>ClientName</find>
       <find>JOption</find>
@@ -265,6 +262,9 @@
       <find>panelClientSer</find>
       <find>figurePosition</find>
       <find>figurePositio</find>
+      <find>moveDown</find>
+      <find>moveLef</find>
+      <find>moveLeft</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/com/template/method/gui</dir>
@@ -446,7 +446,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548145266213" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548146885874" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -487,39 +487,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FigureTest.makeFigureSeven">
-    <configuration name="FigureTest.makeFigureFive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tetrisApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.template.method.gui.figure.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.template.method.gui.figure" />
-      <option name="MAIN_CLASS_NAME" value="com.template.method.gui.figure.FigureTest" />
-      <option name="METHOD_NAME" value="makeFigureFive" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FigureTest.makeFigureFour" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tetrisApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.template.method.gui.figure.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.template.method.gui.figure" />
-      <option name="MAIN_CLASS_NAME" value="com.template.method.gui.figure.FigureTest" />
-      <option name="METHOD_NAME" value="makeFigureFour" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.FigureTest.moveRight">
     <configuration name="FigureTest.makeFigureSeven" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tetrisApp" />
       <extension name="coverage">
@@ -552,7 +520,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FigureTest.makeFigureThree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FigureTest.moveDown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tetrisApp" />
       <extension name="coverage">
         <pattern>
@@ -562,26 +530,58 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.template.method.gui.figure" />
       <option name="MAIN_CLASS_NAME" value="com.template.method.gui.figure.FigureTest" />
-      <option name="METHOD_NAME" value="makeFigureThree" />
+      <option name="METHOD_NAME" value="moveDown" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FigureTest.moveLeft" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tetrisApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.template.method.gui.figure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.template.method.gui.figure" />
+      <option name="MAIN_CLASS_NAME" value="com.template.method.gui.figure.FigureTest" />
+      <option name="METHOD_NAME" value="moveLeft" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FigureTest.moveRight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tetrisApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.template.method.gui.figure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.template.method.gui.figure" />
+      <option name="MAIN_CLASS_NAME" value="com.template.method.gui.figure.FigureTest" />
+      <option name="METHOD_NAME" value="moveRight" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.FigureTest.makeFigureThree" />
-      <item itemvalue="JUnit.FigureTest.makeFigureFour" />
-      <item itemvalue="JUnit.FigureTest.makeFigureFive" />
       <item itemvalue="JUnit.FigureTest.makeFigureSix" />
       <item itemvalue="JUnit.FigureTest.makeFigureSeven" />
+      <item itemvalue="JUnit.FigureTest.moveDown" />
+      <item itemvalue="JUnit.FigureTest.moveLeft" />
+      <item itemvalue="JUnit.FigureTest.moveRight" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FigureTest.moveRight" />
+        <item itemvalue="JUnit.FigureTest.moveDown" />
+        <item itemvalue="JUnit.FigureTest.moveLeft" />
         <item itemvalue="JUnit.FigureTest.makeFigureSeven" />
         <item itemvalue="JUnit.FigureTest.makeFigureSix" />
-        <item itemvalue="JUnit.FigureTest.makeFigureFive" />
-        <item itemvalue="JUnit.FigureTest.makeFigureFour" />
-        <item itemvalue="JUnit.FigureTest.makeFigureThree" />
       </list>
     </recent_temporary>
   </component>
@@ -599,24 +599,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FigureTest_makeFigureOne - 2019.01.22 at 09h 15m 50s.xml">
-      <configuration name="FigureTest.makeFigureOne" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FigureTest_makeFigureOne - 2019.01.22 at 09h 15m 56s.xml">
-      <configuration name="FigureTest.makeFigureOne" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FigureTest_makeFigureOne - 2019.01.22 at 09h 16m 11s.xml">
-      <configuration name="FigureTest.makeFigureOne" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FigureTest_makeFigureOne - 2019.01.22 at 09h 16m 24s.xml">
-      <configuration name="FigureTest.makeFigureOne" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FigureTest_makeFigureOne - 2019.01.22 at 09h 16m 39s.xml">
-      <configuration name="FigureTest.makeFigureOne" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FigureTest_makeFigureOne - 2019.01.22 at 09h 17m 15s.xml">
-      <configuration name="FigureTest.makeFigureOne" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="FigureTest_makeFigureTwo - 2019.01.22 at 09h 17m 55s.xml">
       <configuration name="FigureTest.makeFigureTwo" configurationId="JUnit" />
     </history-entry>
@@ -628,6 +610,24 @@
     </history-entry>
     <history-entry file="FigureTest_makeFigureFour - 2019.01.22 at 09h 19m 21s.xml">
       <configuration name="FigureTest.makeFigureFour" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FigureTest_makeFigureFive - 2019.01.22 at 09h 20m 26s.xml">
+      <configuration name="FigureTest.makeFigureFive" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FigureTest_makeFigureSix - 2019.01.22 at 09h 20m 29s.xml">
+      <configuration name="FigureTest.makeFigureSix" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FigureTest_makeFigureSeven - 2019.01.22 at 09h 20m 54s.xml">
+      <configuration name="FigureTest.makeFigureSeven" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FigureTest_makeFigureSeven - 2019.01.22 at 09h 21m 07s.xml">
+      <configuration name="FigureTest.makeFigureSeven" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FigureTest_moveDown - 2019.01.22 at 09h 39m 21s.xml">
+      <configuration name="FigureTest.moveDown" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FigureTest_moveDown - 2019.01.22 at 09h 41m 22s.xml">
+      <configuration name="FigureTest.moveDown" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -667,16 +667,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/client/ClientOutput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/com/template/method/client/ClientOutputTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1106,10 +1096,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.desktop/java/awt/Component.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="2096" column="16" selection-start-line="2096" selection-start-column="16" selection-end-line="2096" selection-end-column="16" />
+          <folding>
+            <element signature="e#72045#72046#0" expanded="true" />
+            <element signature="e#72071#72072#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/figure/Figure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-157">
-          <caret line="214" column="102" lean-forward="true" selection-start-line="214" selection-start-column="92" selection-end-line="214" selection-end-column="102" />
+        <state relative-caret-position="266">
+          <caret line="381" column="24" selection-start-line="381" selection-start-column="16" selection-end-line="381" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#29730#29731#0" expanded="true" />
@@ -1122,8 +1123,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/com/template/method/gui/figure/FigureTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
+        <state relative-caret-position="605">
+          <caret line="143" column="62" selection-start-line="143" selection-start-column="62" selection-end-line="143" selection-end-column="62" />
         </state>
       </provider>
     </entry>

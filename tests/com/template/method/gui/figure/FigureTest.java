@@ -18,6 +18,8 @@ class FigureTest {
 
     }
 
+
+    //TODO: refactor this test! to be more accurate
     @Test
     void makeFigureOne() {
         Figure sut = new Figure(20,21,23,24);
@@ -119,29 +121,62 @@ class FigureTest {
 
     @Test
     void moveDown() {
+        Figure sut = new Figure(20,21,23,24);
+        Point previousLocation = sut.getLocation();
+
+        sut.moveDown();
+
+        Point newLocation = sut.getLocation();
+
+        assertEquals(previousLocation.getX(), newLocation.getX());
+        assertEquals(previousLocation.getY() + (1*sut.addY), newLocation.getY());
     }
 
     @Test
     void moveLeft() {
+        Figure sut = new Figure(20,21,23,24);
+        Point previousLocation = sut.getLocation();
+
+        sut.moveLeft();
+
+        Point newLocation = sut.getLocation();
+
+        assertEquals(previousLocation.getX() - (1*sut.addX), newLocation.getX());
+        assertEquals(previousLocation.getY(), newLocation.getY());
+
     }
 
     @Test
     void moveRight() {
+        Figure sut = new Figure(20,21,23,24);
+        Point previousLocation = sut.getLocation();
+
+        sut.moveRight();
+
+        Point newLocation = sut.getLocation();
+
+        assertEquals(previousLocation.getX() + (1*sut.addX), newLocation.getX());
+        assertEquals(previousLocation.getY(), newLocation.getY());
+
     }
 
     @Test
     void rotateLeft() {
+
     }
 
     @Test
     void preRotate() {
+
     }
 
     @Test
     void rotateRight() {
+
     }
 
     @Test
     void removeBlocks() {
+
     }
 }
