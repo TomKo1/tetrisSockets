@@ -43,14 +43,32 @@ public class Block extends JComponent {
   /**
    * Paints the component
    */
+  @Override
   public void paintComponent(Graphics g) {
     g.setColor(color);
     g.fill3DRect(0, 0, 19, 19, true);
+    // border
     g.setColor(Color.WHITE);
     g.drawRect(0, 0, 20, 20);
   }
 
   public Color getColor() {
     return color;
+  }
+
+  public int getBlockWidth() {
+    return blockWidth;
+  }
+
+  public int getBlockHeight() {
+    return blockHeight;
+  }
+
+  public int getBlockX() {
+    return blockX;
+  }
+
+  public int getBlockY() {
+    return blockY;
   }
 }

@@ -7,18 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class TetrisFrameTest {
 
     @Test
-    void initServerLog() {
-    }
-
-    @Test
-    void printServerLog() {
-    }
-
-    @Test
-    void tetrisFrameInit() {
-    }
-
-    @Test
-    void main() {
+    void tetrisFrameShouldBeCorrectlyInitialized() {
+        TetrisFrame sut = new TetrisFrame();
+        assertNotNull(sut.getPanelClientServer());
+        assertNotNull(sut.getClientFrame());
     }
 }

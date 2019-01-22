@@ -17,7 +17,7 @@ public class Figure extends JComponent implements Serializable {
     //rotate position of the tetris figure
     private int figurePosition = 0;
     //color of the tetris figure
-    protected Color randomFigure = null;
+    protected Color randomFigureColor = null;
     // figure type 1,2,3,4,5,6 or 7
     protected int figureType = 0;
     //x start position of the figure on the  battle field
@@ -71,6 +71,7 @@ public class Figure extends JComponent implements Serializable {
      * Force swing component repaint
 
      */
+    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
     }
@@ -128,7 +129,7 @@ public class Figure extends JComponent implements Serializable {
             this.blockThree = new Block(blockWidth, blockHeight, startX, startY - (1 * addY), Color.RED);
             this.blockFour = new Block(blockWidth, blockHeight, startX, startY - (2 * addY), Color.RED);
         }
-        this.randomFigure = Color.RED;
+        this.randomFigureColor = Color.RED;
         this.add(blockOne);
         this.add(blockTwo);
         this.add(blockThree);
@@ -163,7 +164,7 @@ public class Figure extends JComponent implements Serializable {
             this.blockThree = new Block(blockWidth, blockHeight, startX - (1 * addX), startY, Color.GREEN);
             this.blockFour = new Block(blockWidth, blockHeight, startX - (2 * addX), startY, Color.GREEN);
         }
-        this.randomFigure = Color.GREEN;
+        this.randomFigureColor = Color.GREEN;
         this.add(blockOne);
         this.add(blockTwo);
         this.add(blockThree);
@@ -198,7 +199,7 @@ public class Figure extends JComponent implements Serializable {
             this.blockThree = new Block(blockWidth, blockHeight, startX - (1 * addX), startY, Color.ORANGE);
             this.blockFour = new Block(blockWidth, blockHeight, startX - (2 * addX), startY, Color.ORANGE);
         }
-        this.randomFigure = Color.ORANGE;
+        this.randomFigureColor = Color.ORANGE;
         this.add(blockOne);
         this.add(blockTwo);
         this.add(blockThree);
@@ -233,7 +234,7 @@ public class Figure extends JComponent implements Serializable {
             this.blockThree = new Block(blockWidth, blockHeight, startX, startY - (1 * addY), Color.BLUE);
             this.blockFour = new Block(blockWidth, blockHeight, startX - (1 * addX), startY, Color.BLUE);
         }
-        this.randomFigure = Color.BLUE;
+        this.randomFigureColor = Color.BLUE;
         this.add(blockOne);
         this.add(blockTwo);
         this.add(blockThree);
@@ -251,7 +252,7 @@ public class Figure extends JComponent implements Serializable {
             this.blockThree = new Block(blockWidth, blockHeight, startX, startY - (1 * addY), Color.YELLOW);
             this.blockFour = new Block(blockWidth, blockHeight, startX + (1 * addX), startY - (1 * addY), Color.YELLOW);
         }
-        this.randomFigure = Color.YELLOW;
+        this.randomFigureColor = Color.YELLOW;
         this.add(blockOne);
         this.add(blockTwo);
         this.add(blockThree);
@@ -275,7 +276,7 @@ public class Figure extends JComponent implements Serializable {
             this.blockThree = new Block(blockWidth, blockHeight, startX, startY - (1 * addY), Color.PINK);
             this.blockFour = new Block(blockWidth, blockHeight, startX + (1 * addX), startY - (1 * addY), Color.PINK);
         }
-        this.randomFigure = Color.PINK;
+        this.randomFigureColor = Color.PINK;
         this.add(blockOne);
         this.add(blockTwo);
         this.add(blockThree);
@@ -299,7 +300,7 @@ public class Figure extends JComponent implements Serializable {
             this.blockThree = new Block(blockWidth, blockHeight, startX, startY - (1 * addY), Color.DARK_GRAY);
             this.blockFour = new Block(blockWidth, blockHeight, startX - (1 * addX), startY - (1 * addY), Color.DARK_GRAY);
         }
-        this.randomFigure = Color.DARK_GRAY;
+        this.randomFigureColor = Color.DARK_GRAY;
         this.add(blockOne);
         this.add(blockTwo);
         this.add(blockThree);
@@ -311,7 +312,7 @@ public class Figure extends JComponent implements Serializable {
      * Returns  figure color.
      */
     public Color getColor() {
-        return this.randomFigure;
+        return this.randomFigureColor;
     }
 
     /**
@@ -396,31 +397,31 @@ public class Figure extends JComponent implements Serializable {
      */
     public void rotateLeft() {
         this.removeAll();
-        if (this.randomFigure.equals(Color.RED)) {
+        if (this.randomFigureColor.equals(Color.RED)) {
             this.figurePosition = (this.figurePosition + 1) % 2;
             this.makeFigureOne();
         }
-        else if (this.randomFigure.equals(Color.GREEN)) {
+        else if (this.randomFigureColor.equals(Color.GREEN)) {
             this.figurePosition = (this.figurePosition + 1) % 4;
             this.makeFigureTwo();
         }
-        else if (this.randomFigure.equals(Color.ORANGE)) {
+        else if (this.randomFigureColor.equals(Color.ORANGE)) {
             this.figurePosition = (this.figurePosition + 1) % 4;
             this.makeFigureThree();
         }
-        else if (this.randomFigure.equals(Color.BLUE)) {
+        else if (this.randomFigureColor.equals(Color.BLUE)) {
             this.figurePosition = (this.figurePosition + 1) % 4;
             this.makeFigureFour();
         }
-        else if (this.randomFigure.equals(Color.YELLOW)) {
+        else if (this.randomFigureColor.equals(Color.YELLOW)) {
             this.figurePosition = (this.figurePosition + 1) % 4;
             this.makeFigureFive();
         }
-        else if (this.randomFigure.equals(Color.PINK)) {
+        else if (this.randomFigureColor.equals(Color.PINK)) {
             this.figurePosition = (this.figurePosition + 1) % 2;
             this.makeFigureSix();
         }
-        else if (this.randomFigure.equals(Color.DARK_GRAY)) {
+        else if (this.randomFigureColor.equals(Color.DARK_GRAY)) {
             this.figurePosition = (this.figurePosition + 1) % 2;
             this.makeFigureSeven();
         }
@@ -586,49 +587,49 @@ public class Figure extends JComponent implements Serializable {
      */
     public void rotateRight() {
         this.removeAll();
-        if (this.randomFigure.equals(Color.RED)) {
+        if (this.randomFigureColor.equals(Color.RED)) {
             this.figurePosition--;
             if (this.figurePosition == -1) {
                 this.figurePosition = 1;
             }
             this.makeFigureOne();
         }
-        else if (this.randomFigure.equals(Color.GREEN)) {
+        else if (this.randomFigureColor.equals(Color.GREEN)) {
             this.figurePosition--;
             if (this.figurePosition == -1) {
                 this.figurePosition = 3;
             }
             this.makeFigureTwo();
         }
-        else if (this.randomFigure.equals(Color.ORANGE)) {
+        else if (this.randomFigureColor.equals(Color.ORANGE)) {
             this.figurePosition--;
             if (this.figurePosition == -1) {
                 this.figurePosition = 3;
             }
             this.makeFigureThree();
         }
-        else if (this.randomFigure.equals(Color.BLUE)) {
+        else if (this.randomFigureColor.equals(Color.BLUE)) {
             this.figurePosition--;
             if (this.figurePosition == -1) {
                 this.figurePosition = 3;
             }
             this.makeFigureFour();
         }
-        else if (this.randomFigure.equals(Color.YELLOW)) {
+        else if (this.randomFigureColor.equals(Color.YELLOW)) {
             this.figurePosition--;
             if (this.figurePosition == -1) {
                 this.figurePosition = 3;
             }
             this.makeFigureFive();
         }
-        else if (this.randomFigure.equals(Color.PINK)) {
+        else if (this.randomFigureColor.equals(Color.PINK)) {
             this.figurePosition--;
             if (this.figurePosition == -1) {
                 this.figurePosition = 1;
             }
             this.makeFigureSix();
         }
-        else if (this.randomFigure.equals(Color.DARK_GRAY)) {
+        else if (this.randomFigureColor.equals(Color.DARK_GRAY)) {
             this.figurePosition--;
             if (this.figurePosition == -1) {
                 this.figurePosition = 1;
@@ -770,6 +771,14 @@ public class Figure extends JComponent implements Serializable {
 
     public int getFigurePosition() {
         return figurePosition;
+    }
+
+    public void setFigurePosition(int position) {
+        this.figureType = position;
+    }
+
+    public Color getRandomFigureColor() {
+        return this.randomFigureColor;
     }
 
 

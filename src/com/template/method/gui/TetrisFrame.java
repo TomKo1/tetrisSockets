@@ -95,4 +95,12 @@ public class TetrisFrame extends JFrame {
     public JTextArea getServerLogTextArea() {
         return serverLogTextArea;
     }
+
+    public JPanel getPanelClientServer() {
+        return panelClientServer;
+    }
+
+    public ClientFrame getClientFrame() {
+        return clientFrame;
+    }
 }

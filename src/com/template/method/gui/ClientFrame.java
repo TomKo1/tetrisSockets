@@ -167,6 +167,7 @@ public class ClientFrame extends JFrame {
 
 
         //initialization of mutliplayer button
+        //TODO: some response when there no free slot for new payer
         joinGameBtn = new JButton("Dołącz do gry");
         joinGameBtn.addActionListener(e -> {
             String host = ClientFrame.this.host.getText();
