@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--This is my local ip -->
+    <ip>192.45.32.1</ip>
+    <port>8001</port>
+    <playerCount>1</playerCount>
+    <playTime>632</playTime>
+</configuration>

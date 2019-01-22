@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df5d59e6-b411-4987-94d7-fe9c0507f07a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/template/method/client/TetrisClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/client/TetrisClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/template/method/client/command/Points.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/client/command/Points.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/template/method/gui/ChatFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/gui/ChatFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleFieldKeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleFieldKeyListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleFieldRect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/template/method/gui/battlefield/BattleFieldRect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/com/template/method/client/command/ClientIdTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/template/method/client/command/ClientIdTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/com/template/method/client/command/FigureResponseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/template/method/client/command/FigureResponseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/com/template/method/client/command/PointsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/template/method/client/command/PointsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/com/template/method/client/command/ReceiveMessageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/template/method/client/command/ReceiveMessageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/com/template/method/client/command/StartChatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/template/method/client/command/StartChatTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/com/template/method/client/command/StopClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/template/method/client/command/StopClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/com/template/method/gui/battlefield/BattleFieldKeyListenerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/template/method/gui/battlefield/BattleFieldKeyListenerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/com/template/method/gui/battlefield/BattleFieldRectTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/template/method/gui/battlefield/BattleFieldRectTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/com/template/method/gui/figure/FigureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/template/method/gui/figure/FigureTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/com/template/method/utilities/XMLParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/template/method/utilities/XMLParserTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,30 +34,30 @@
         <counts>
           <entry key="groovy" value="1" />
           <entry key="iml" value="2" />
-          <entry key="java" value="337" />
-          <entry key="xml" value="2" />
+          <entry key="java" value="338" />
+          <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="1" />
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="337" />
-          <entry key="XML" value="2" />
+          <entry key="JAVA" value="338" />
+          <entry key="XML" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="53" />
-          <entry key="java" value="27704" />
-          <entry key="xml" value="95" />
+          <entry key="java" value="28007" />
+          <entry key="xml" value="113" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="27704" />
+          <entry key="JAVA" value="28007" />
           <entry key="PLAIN_TEXT" value="53" />
-          <entry key="XML" value="95" />
+          <entry key="XML" value="113" />
         </counts>
       </usages-collector>
     </session>
@@ -80,39 +66,6 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/com/template/method/gui/battlefield/BattleFieldRectTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/template/method/gui/ClientFrame.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="247">
-                  <caret line="72" column="11" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="11" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/com/template/method/gui/battlefield/BattleFieldTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="249">
-                  <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/com/template/method/client/command/ClientIdTest.java">
               <provider selected="true" editor-type-id="text-editor">
@@ -140,11 +93,29 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/com/template/method/client/command/StopClientTest.java">
               <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="345">
+                  <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/tests/com/template/method/utilities/XMLParserTest.java">
+              <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="195">
-                  <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+                  <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/template/method/server/configuration.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret selection-end-line="7" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -240,20 +211,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/template/method/client/command/Points.java">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/tests/com/template/method/utilities/config.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+                <state relative-caret-position="90">
+                  <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/template/method/client/command/ClientId.java">
+            <entry file="file://$PROJECT_DIR$/src/com/template/method/client/command/Points.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+                <state relative-caret-position="210">
+                  <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
                 </state>
               </provider>
             </entry>
@@ -272,10 +243,10 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/template/method/client/TetrisClient.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="668">
+                <state relative-caret-position="608">
                   <caret line="153" column="31" selection-start-line="153" selection-start-column="31" selection-end-line="153" selection-end-column="31" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -380,7 +351,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/template/method/server/command/ClientPoints.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/server/command/FigureRequest.java" />
         <option value="$PROJECT_DIR$/tests/com/template/method/server/command/ClientPointsTest.java" />
         <option value="$PROJECT_DIR$/tests/com/template/method/server/command/FigureRequestTest.java" />
@@ -403,7 +373,6 @@
         <option value="$PROJECT_DIR$/src/com/template/method/server/ThreadServer.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/server/XMLParser.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/utilities/XMLParser.java" />
-        <option value="$PROJECT_DIR$/tests/com/template/method/utilities/XMLParserTest.java" />
         <option value="$PROJECT_DIR$/tests/com/template/method/server/ServerInputTest.java" />
         <option value="$PROJECT_DIR$/tests/com/template/method/server/ServerOutputTest.java" />
         <option value="$PROJECT_DIR$/tests/com/template/method/server/TetrisServerTest.java" />
@@ -431,6 +400,8 @@
         <option value="$PROJECT_DIR$/tests/com/template/method/client/command/StartChatTest.java" />
         <option value="$PROJECT_DIR$/src/com/template/method/client/TetrisClient.java" />
         <option value="$PROJECT_DIR$/tests/com/template/method/client/command/StopClientTest.java" />
+        <option value="$PROJECT_DIR$/tests/com/template/method/utilities/config.xml" />
+        <option value="$PROJECT_DIR$/tests/com/template/method/utilities/XMLParserTest.java" />
       </list>
     </option>
   </component>
@@ -557,7 +528,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548150710676" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548151039099" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -598,7 +569,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.StopClientTest.execute">
+  <component name="RunManager" selected="JUnit.XMLParserTest.parseConfiguration">
     <configuration name="ReceiveMessageTest.execute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tetrisApp" />
       <extension name="coverage">
@@ -610,22 +581,6 @@
       <option name="PACKAGE_NAME" value="com.template.method.client.command" />
       <option name="MAIN_CLASS_NAME" value="com.template.method.client.command.ReceiveMessageTest" />
       <option name="METHOD_NAME" value="execute" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReceiveMessageTest.getMessageKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tetrisApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.template.method.client.command.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.template.method.client.command" />
-      <option name="MAIN_CLASS_NAME" value="com.template.method.client.command.ReceiveMessageTest" />
-      <option name="METHOD_NAME" value="getMessageKey" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -679,20 +634,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="XMLParserTest.parseConfiguration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tetrisApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.template.method.utilities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.template.method.utilities" />
+      <option name="MAIN_CLASS_NAME" value="com.template.method.utilities.XMLParserTest" />
+      <option name="METHOD_NAME" value="parseConfiguration" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="JUnit.ReceiveMessageTest.getMessageKey" />
       <item itemvalue="JUnit.ReceiveMessageTest.execute" />
       <item itemvalue="JUnit.StartChatTest.execute" />
       <item itemvalue="JUnit.StopClientTest.getMessageKey" />
       <item itemvalue="JUnit.StopClientTest.execute" />
+      <item itemvalue="JUnit.XMLParserTest.parseConfiguration" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.XMLParserTest.parseConfiguration" />
         <item itemvalue="JUnit.StopClientTest.execute" />
         <item itemvalue="JUnit.StopClientTest.getMessageKey" />
         <item itemvalue="JUnit.StartChatTest.execute" />
         <item itemvalue="JUnit.ReceiveMessageTest.execute" />
-        <item itemvalue="JUnit.ReceiveMessageTest.getMessageKey" />
       </list>
     </recent_temporary>
   </component>
@@ -710,12 +681,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FigureResponseTest_execute - 2019.01.22 at 10h 25m 58s.xml">
-      <configuration name="FigureResponseTest.execute" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PointsTest_getMessageKey - 2019.01.22 at 10h 27m 03s.xml">
-      <configuration name="PointsTest.getMessageKey" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PointsTest_execute - 2019.01.22 at 10h 35m 16s.xml">
       <configuration name="PointsTest.execute" configurationId="JUnit" />
     </history-entry>
@@ -739,6 +704,12 @@
     </history-entry>
     <history-entry file="StopClientTest_getMessageKey - 2019.01.22 at 10h 50m 51s.xml">
       <configuration name="StopClientTest.getMessageKey" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StopClientTest_execute - 2019.01.22 at 10h 51m 52s.xml">
+      <configuration name="StopClientTest.execute" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="XMLParserTest_parseConfiguration - 2019.01.22 at 10h 54m 31s.xml">
+      <configuration name="XMLParserTest.parseConfiguration" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -778,39 +749,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/utilities/XMLParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2453#2454#0" expanded="true" />
-            <element signature="e#2506#2507#0" expanded="true" />
-            <element signature="e#2545#2546#0" expanded="true" />
-            <element signature="e#2584#2585#0" expanded="true" />
-            <element signature="e#2685#2686#0" expanded="true" />
-            <element signature="e#2720#2721#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/com/template/method/utilities/XMLParserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/ServerInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/com/template/method/server/ServerInputTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1216,7 +1154,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/template/method/client/TetrisClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="668">
+        <state relative-caret-position="608">
           <caret line="153" column="31" selection-start-line="153" selection-start-column="31" selection-end-line="153" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1244,8 +1182,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/com/template/method/client/command/StopClientTest.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/template/method/server/configuration.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/template/method/utilities/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/template/method/utilities/XMLParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
         </state>
       </provider>
     </entry>
