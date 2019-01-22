@@ -22,6 +22,7 @@ public class BattleFieldKeyListener extends KeyAdapter {
   /**
    * Handles the key pressing
    */
+  @Override
   public void keyPressed(KeyEvent evt) {
     int keyCode = evt.getKeyCode();
 

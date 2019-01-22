@@ -15,7 +15,7 @@ public class Points implements ClientRequestable {
     }
 
     public void execute(TetrisClient tetrisClient) {
-        tetrisClient.setFinalPoints(points);
+        tetrisClient.showFinalPoints(points);
     }
 
     public String getMessageKey() {

@@ -15,7 +15,7 @@ public class ChatFrame extends JFrame {
     private JTextArea jTextArea;
     private JTextField inputMessage;
     private TetrisClient tetrisClient;
-
+    private boolean isDisplayed = false;
 
 
     public ChatFrame(TetrisClient tetrisClient) {
@@ -27,6 +27,7 @@ public class ChatFrame extends JFrame {
     }
 
     public void start() {
+        isDisplayed = true;
         setVisible(true);
     }
 
@@ -79,4 +80,8 @@ public class ChatFrame extends JFrame {
         return tetrisClient;
     }
 
+
+    public boolean isDisplayed() {
+        return isDisplayed;
+    }
 }

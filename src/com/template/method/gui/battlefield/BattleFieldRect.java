@@ -17,6 +17,7 @@ public class BattleFieldRect extends JComponent {
    *
    * @param g the battle field background
    */
+  @Override
   public void paintComponent(Graphics g) {
     g.setColor(Color.DARK_GRAY);
     g.fillRect(0, 0, 440, 40);

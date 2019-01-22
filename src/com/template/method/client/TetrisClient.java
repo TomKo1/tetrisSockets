@@ -3,6 +3,7 @@ package com.template.method.client;
 import com.template.method.gui.ChatFrame;
 import com.template.method.gui.ClientFrame;
 import com.template.method.gui.battlefield.BattleField;
+import com.template.method.gui.figure.Figure;
 import com.template.method.server.command.StartGameRequest;
 import java.awt.*;
 import java.io.*;
@@ -27,6 +28,7 @@ public class TetrisClient implements Serializable {
     private ClientOutput output;
     protected int clientId = 0;
     protected ClientFrame clientFrame;
+    private boolean isChatFrameDisplayed = false;
 
     public TetrisClient() { }
 
@@ -87,6 +89,7 @@ public class TetrisClient implements Serializable {
     public void showChatFrame() {
 
         chatFrame = new ChatFrame(this);
+        isChatFrameDisplayed = true;
         EventQueue.invokeLater(() -> chatFrame.start());
 
     }
@@ -101,7 +104,7 @@ public class TetrisClient implements Serializable {
     /**
      * Shows clients their final results
      */
-    public void setFinalPoints(int clientPoints) {
+    public void showFinalPoints(int clientPoints) {
         this.battleField.showFinalPointDialog(clientPoints);
     }
 
@@ -128,5 +131,26 @@ public class TetrisClient implements Serializable {
 
     public void setClientId(int clientId) {
         this.clientId = clientId;
+    }
+
+    public void setBattleField(BattleField bf) {
+        this.battleField = bf;
+    }
+
+    public ChatFrame getChatFrame() {
+        return this.chatFrame;
+    }
+
+    public void setChatFrame(ChatFrame cf) {
+        this.chatFrame = cf;
+    }
+
+
+    public boolean isChatFrameDisplayed() {
+        return isChatFrameDisplayed;
+    }
+
+    public boolean isClientRunning() {
+        return isClientRunning;
     }
 }

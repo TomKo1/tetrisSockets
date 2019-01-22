@@ -9,14 +9,14 @@ import static org.junit.jupiter.api.Assertions.*;
 //TODO: implement this tests
 class FigureTest {
 
-
-    @Test
-    void makeFigure() {
-        Figure sut = new Figure(20,21,23,24);
-
-
-
-    }
+//
+//    @Test
+//    void makeFigure() {
+//        Figure sut = new Figure(20,21,23,24);
+//
+//
+//
+//    }
 
 
     //TODO: refactor this test! to be more accurate
@@ -160,23 +160,23 @@ class FigureTest {
 
     }
 
-    @Test
-    void rotateLeft() {
-
-    }
-
-    @Test
-    void preRotate() {
-
-    }
-
-    @Test
-    void rotateRight() {
-
-    }
-
-    @Test
-    void removeBlocks() {
-
-    }
+//    @Test
+//    void rotateLeft() {
+//
+//    }
+//
+//    @Test
+//    void preRotate() {
+//
+//    }
+//
+//    @Test
+//    void rotateRight() {
+//
+//    }
+//
+//    @Test
+//    void removeBlocks() {
+//
+//    }
 }

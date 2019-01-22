@@ -33,6 +33,8 @@ public class BattleField extends JFrame {
     public boolean firstTime;
     protected BattleFieldRect battlefieldBackground;
     protected ClientFrame clientFrame ;
+    // boolean value set when dialog is being shown
+    private boolean isShowingDialog = false;
 
     public BattleField(TetrisClient tetrisClient, ClientFrame clientFrame) {
         super("Tetris");
@@ -664,8 +666,18 @@ public class BattleField extends JFrame {
      *  Show client their final score
      */
     public void showFinalPointDialog(int points) {
+        isShowingDialog = true;
         JOptionPane.showMessageDialog(this, "Zdobyłeś: " + points + " punktów.", "Koniec gry", JOptionPane.INFORMATION_MESSAGE);
     }
 
+
+    public List<Figure> getFigures() {
+        return this.figures;
+    }
+
+
+    public boolean isShowingDialog() {
+        return  isShowingDialog;
+    }
 
 }

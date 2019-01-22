@@ -8,5 +8,6 @@ class BattleFieldRectTest {
 
     @Test
     void paintComponent() {
+        //todo: implement this test!
     }
 }
